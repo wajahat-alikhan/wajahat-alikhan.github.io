@@ -1,2 +1,2 @@
-# wajahatalikhan.github.io
+# wajahat-alikhan.github.io
 My website
