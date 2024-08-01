@@ -13,3 +13,4 @@ Some good resources:
 - [Linear Algebra](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/)
 - [Deep Learning](https://course.fast.ai/)
 - [Computer Vision](https://www.youtube.com/watch?v=NfnWJUyUJYU&list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC)
+> If I have seen further, it is by standing on the shoulders of giants. -Isaac Newton
