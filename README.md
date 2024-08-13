@@ -1,4 +1,4 @@
-I am MS-PhD combined student at Kyung Hee University, South Korea in the department of Computer Science and Engineering.
+I am MS-PhD combined student at Kyung Hee University, South Korea in the department of Computer Science and Engineering, you can also [email](wajahat@khu.ac.kr) me.
 
 I am doing research in PerCV Lab in Computer Vision and Multimodality, specifically the representation, alignment and transfer challenge of the multimodal domain.
 
