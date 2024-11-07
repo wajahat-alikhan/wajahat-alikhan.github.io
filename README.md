@@ -13,7 +13,7 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 
 
 # Publications
-* Multimodal Learning for Autoencoders - SIGGRAPH Asia 2024
+* Multimodal Learning for Autoencoders - ACM SIGGRAPH Asia 2024 (Poster)
 
 
 
