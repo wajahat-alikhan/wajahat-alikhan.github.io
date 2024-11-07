@@ -17,7 +17,7 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 
 
 
-If you are looking to do Ph.D and want some advice from [Richard Hamming](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html) and [Andrej karpathy](https://karpathy.github.io/2016/09/07/phd/).
+
 
 
 
@@ -42,7 +42,7 @@ Some good resources:
 
 
 
-
+If you are looking to do Ph.D and want some advice from [Richard Hamming](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html) and [Andrej karpathy](https://karpathy.github.io/2016/09/07/phd/).
 
 
 
