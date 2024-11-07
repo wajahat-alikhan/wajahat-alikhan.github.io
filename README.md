@@ -1,6 +1,20 @@
-I am MS student at Kyung Hee University, South Korea in the department of Artifcial Intelligence, you can reach out to me by my email at (wajahat@khu.ac.kr).
+I am a graduate student at Kyung Hee University, South Korea in the department of Artifcial Intelligence, and am currently doing research in PerCV Lab under the supervision of Professor Lee Seungkyu.
 
-I am interested in Machine Learning and Deep Learning and doing research in PerCV Lab in Computer Vision and Multimodality.
+I am also a student member of Association for Computing Machinery (ACM).
+
+You can reach out to me by my email at (wajahat@khu.ac.kr) or (wajahatalikhan@acm.org).
+
+My research interests include Machine Learning, Deep Learning, Computer Vision and Multimodality.
+
+
+
+
+
+
+
+# Publications
+* Multimodal Learning for Autoencoders - SIGGRAPH Asia 2024
+
 
 
 If you are looking to do Ph.D and want some advice from [Richard Hamming](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html) and [Andrej karpathy](https://karpathy.github.io/2016/09/07/phd/).
@@ -8,7 +22,8 @@ If you are looking to do Ph.D and want some advice from [Richard Hamming](https:
 
 
 
-
+# Projects
+* Involved in a collaborative project with Kyung Hee University Hospital at Gangdong for MRI and PET images.
 
 
 
