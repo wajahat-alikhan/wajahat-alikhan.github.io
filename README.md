@@ -1,4 +1,4 @@
-I did my BSc in Electrical Engineering (Communication) from UET Peshawar, Pakistan. Currently I am a graduate student at Kyung Hee University, South Korea in the department of Artifcial Intelligence, and am doing research in PerCV Lab under the supervision of Professor Lee Seungkyu.
+I did my B.Sc in Electrical Engineering (Communication) from UET Peshawar, Pakistan. Currently I am a graduate student at Kyung Hee University, South Korea in the department of Artifcial Intelligence, and am doing research in PerCV Lab under the supervision of Professor Lee Seungkyu.
 
 I am also a student member of Association for Computing Machinery (ACM).
 
@@ -27,6 +27,7 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 
 # Conferences
 * Attended ICMRI 2024 in Seoul, South Korea.
+* Will attend and present in SIGGRAPH Asia 2024 in Tokyo, Japan.
 
 
 
@@ -34,7 +35,7 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 
 
 
-Some good resources:
+some good resources to learn:
 - [Computer Science](https://cs50.harvard.edu/x/2024/)
 - [Machine Learning](https://www.coursera.org/specializations/machine-learning-introduction?utm_source=gg&utm_medium=sem&utm_campaign=b2c_apac_machine-learning-introduction_stanford-deeplearning.ai_ftcof_specializations_arte_mar-24_dr_geo-set-1-multi_sem_rsa_gads_lg-all&utm_content=b2c&campaignid=21120637622&adgroupid=158026601657&device=c&keyword=best%20machine%20learning%20coursera&matchtype=p&network=g&devicemodel=&adpostion=&creativeid=698160336215&hide_mobile_promo&gad_source=1&gclid=Cj0KCQjw-5y1BhC-ARIsAAM_oKm638e9ygT1FqLu9oQJUw9xJJFo6esdyKyx1iH-tHNJlgXmna2sSQgaAqQ6EALw_wcB)
 - [Linear Algebra](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/)
