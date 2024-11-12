@@ -20,12 +20,13 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 
 
 
+# Industry Collaborations
+* Leading a collaborative project with Kyung Hee University Hospital at Gangdong for MRI and PET images.
 
 
-# Projects
-* Involved in a collaborative project with Kyung Hee University Hospital at Gangdong for MRI and PET images.
 
-
+# Conferences
+* Attended ICMRI 2024 in Seoul, South Korea.
 
 
 
