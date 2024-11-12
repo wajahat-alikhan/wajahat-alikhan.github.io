@@ -1,4 +1,4 @@
-I am a graduate student at Kyung Hee University, South Korea in the department of Artifcial Intelligence, and am currently doing research in PerCV Lab under the supervision of Professor Lee Seungkyu.
+I did my BSc in Electrical Engineering (Communication) from UET Peshawar, Pakistan. Currently I am a graduate student at Kyung Hee University, South Korea in the department of Artifcial Intelligence, and am doing research in PerCV Lab under the supervision of Professor Lee Seungkyu.
 
 I am also a student member of Association for Computing Machinery (ACM).
 
