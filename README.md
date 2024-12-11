@@ -13,7 +13,7 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 
 
 # Publications
-* Multimodal Learning for Autoencoders - ACM SIGGRAPH Asia 2024 (Poster)
+* [Multimodal Learning for Autoencoders](https://dl.acm.org/doi/10.1145/3681756.3697974) - ACM SIGGRAPH Asia 2024 (Poster)
 
 
 
@@ -27,7 +27,7 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 
 # Conferences
 * Attended ICMRI 2024 in Seoul, South Korea.
-* Will attend and present in SIGGRAPH Asia 2024 in Tokyo, Japan.
+* Attended and presented in SIGGRAPH Asia 2024 in Tokyo, Japan.
 
 
 
