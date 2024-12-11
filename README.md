@@ -26,7 +26,7 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 
 
 # Conferences
-* Attended ICMRI 2024 in Seoul, South Korea.
+* Attended [ICMRI 2024](https://www.linkedin.com/posts/wajahat-alikhan_attendance-certificate-icmri-2024-activity-7261981808290914305-cKNh?utm_source=share&utm_medium=member_desktop) in Seoul, South Korea.
 * Attended and presented in SIGGRAPH Asia 2024 in Tokyo, Japan.
 
 
