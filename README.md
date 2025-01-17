@@ -20,8 +20,8 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 
 
 
-# Industry Collaborations
-* Leading a collaborative project with Kyung Hee University Hospital at Gangdong for MRI and PET images.
+# Projects
+* Leading a collaborative project with Kyung Hee University Hospital at Gangdong for MRI to PET cross modal synthesis task.
 
 
 
