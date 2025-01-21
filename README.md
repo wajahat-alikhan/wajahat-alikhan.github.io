@@ -17,7 +17,7 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 
 
 ## Publications
-* [Multimodal Learning for Autoencoders](https://dl.acm.org/doi/10.1145/3681756.3697974) - ACM SIGGRAPH Asia 2024 (Poster)
+* [Multimodal Learning for Autoencoders](https://dl.acm.org/doi/10.1145/3681756.3697974) - ACM SIGGRAPH Asia 2024 (Poster presentation)
 
 
 > If I have seen further, it is by standing on the shoulders of giants. - Isaac Newton
