@@ -8,7 +8,7 @@ You can reach out to me by my email at (wajahat@khu.ac.kr) or (wajahatalikhan@ac
 
 My research interests include Machine Learning, Deep Learning, Computer Vision and Multimodal Learning.
 
-> Luck favors the prepared mind.
+> The unexamined life is not worth living -- Socrates
 
 
 
@@ -20,7 +20,7 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 * [Multimodal Learning for Autoencoders](https://dl.acm.org/doi/10.1145/3681756.3697974) - ACM SIGGRAPH Asia 2024 (Poster presentation)
 
 
-> If I have seen further, it is by standing on the shoulders of giants. - Isaac Newton
+> If I have seen further, it is by standing on the shoulders of giants -- Isaac Newton
 
 
 
@@ -28,7 +28,7 @@ My research interests include Machine Learning, Deep Learning, Computer Vision a
 ## Projects
 * Leading a collaborative project with Kyung Hee University Hospital at Gangdong for MRI to PET cross modal synthesis.
 
-
+> Luck favors the prepared mind -- Louis Pasteur
 
 ## Conferences
 * Attended [ICMRI 2024](https://www.linkedin.com/posts/wajahat-alikhan_attendance-certificate-icmri-2024-activity-7261981808290914305-cKNh?utm_source=share&utm_medium=member_desktop) in Seoul, South Korea.
