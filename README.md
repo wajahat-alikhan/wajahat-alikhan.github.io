@@ -8,6 +8,8 @@ You can reach out to me by my email at (wajahat@khu.ac.kr) or (wajahatalikhan@ac
 
 My research interests include Machine Learning, Deep Learning, Computer Vision and Multimodal Learning.
 
+I also sometimes write [blogs](https://wajahat-alikhan.github.io/blog/).
+
 > The unexamined life is not worth living -- Socrates
 
 
