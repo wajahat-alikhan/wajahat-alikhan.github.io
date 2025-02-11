@@ -28,7 +28,7 @@ I also sometimes write [blogs](https://wajahat-alikhan.github.io/blog/).
 
 
 ## Projects
-* Leading a collaborative project with Kyung Hee University Hospital at Gangdong for MRI to PET cross modal synthesis.
+* Leading a collaborative project with Kyung Hee University Hospital at Gangdong for MRI to PET cross modal synthesis task.
 
 > Luck favors the prepared mind -- Louis Pasteur
 
@@ -38,7 +38,8 @@ I also sometimes write [blogs](https://wajahat-alikhan.github.io/blog/).
 
 
 
-
+## Awards
+* Recipient of the fully funded Presidential Scholarship at KHU (2023–2025).
 
 
 ## Learn
@@ -54,6 +55,7 @@ Some good resources:
 If you are looking to do Ph.D and want some advice from [Richard Hamming](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html) and [Andrej karpathy](https://karpathy.github.io/2016/09/07/phd/).
 
 
+###### Random things about me --- I have traveled to almost 10 cities in Korea, I have won Galaxy buds pro in lottery at a conference, I missed my last subway in Japan...
 
 
 
