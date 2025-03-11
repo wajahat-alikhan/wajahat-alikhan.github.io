@@ -4,7 +4,7 @@ Currently I am a graduate student at Kyung Hee University, South Korea in the de
 
 I am also a student member of Association for Computing Machinery (ACM).
 
-You can reach out to me by my email at (wajahat@khu.ac.kr) or (wajahatalikhan@acm.org).
+You can reach out to me by my email at wajahat@khu.ac.kr , wajahatalikhan@acm.org , [my google scholar](https://scholar.google.com/citations?user=NBMWa-UAAAAJ&hl=en&oi=ao) or [my linkedin](https://www.linkedin.com/in/wajahat-alikhan/) .
 
 My research interests include Machine Learning, Deep Learning, Computer Vision and Multimodal Learning.
 
