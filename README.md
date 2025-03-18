@@ -1,14 +1,14 @@
-I am Wajahat Ali Khan, born and raised in Peshawar. I did my B.Sc in Electrical Engineering (Communication) from UET Peshawar, Pakistan and also did my initial internships and training at different kind of research labs there like NCAI and NCCS. 
+I am Wajahat Ali Khan, born and raised in Peshawar. I did my B.Sc in Electrical Engineering (Communication) from UET Peshawar, Pakistan and also did my initial internships and training at different kind of research centers there like NCAI and NCCS. 
 
 Currently I am a graduate student at Kyung Hee University, South Korea in the department of Artifcial Intelligence, and am doing research in PerCV Lab under the supervision of Professor Lee Seungkyu.
 
-I am also a student member of Association for Computing Machinery (ACM).
+I am a student member of Association for Computing Machinery (ACM) and a member of Pakistan Engineering Council (PEC).
 
-You can reach out to me by my email at wajahat@khu.ac.kr , wajahatalikhan@acm.org , [my google scholar](https://scholar.google.com/citations?user=NBMWa-UAAAAJ&hl=en&oi=ao) or [my linkedin](https://www.linkedin.com/in/wajahat-alikhan/) .
-
-My research interests include Machine Learning, Deep Learning, Computer Vision and Multimodal Learning.
+My research interests include Machine Learning, Deep Learning, Computer Vision, Multimodal Learning and Medical Imaging.
 
 I also sometimes write [blogs](https://wajahat-alikhan.github.io/blog/).
+
+You can reach out to me by my email at wajahat@khu.ac.kr , wajahatalikhan@acm.org , [my linkedin](https://www.linkedin.com/in/wajahat-alikhan/) or can check out [my google scholar](https://scholar.google.com/citations?user=NBMWa-UAAAAJ&hl=en&oi=ao).
 
 > The unexamined life is not worth living -- Socrates
 
