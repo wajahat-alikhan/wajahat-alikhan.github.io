@@ -1,6 +1,6 @@
 I am Wajahat Ali Khan, born and raised in Peshawar. I did my B.Sc in Electrical Engineering (Communication) from UET Peshawar, Pakistan and also did my initial internships and training at different kind of research centers there like NCAI and NCCS. 
 
-Currently I am a graduate student at Kyung Hee University, South Korea in the department of Artifcial Intelligence, and am doing research in PerCV Lab under the supervision of Professor Lee Seungkyu.
+Currently I am a graduate student at Kyung Hee University, South Korea in the department of Artifcial Intelligence, and am doing research in [PerCV Lab](https://cvlab.khu.ac.kr/) under the supervision of [Professor Lee Seungkyu](https://scholar.google.com/citations?user=3Pf6C6cAAAAJ&hl=en).
 
 I am a student member of Association for Computing Machinery (ACM) and a member of Pakistan Engineering Council (PEC).
 
