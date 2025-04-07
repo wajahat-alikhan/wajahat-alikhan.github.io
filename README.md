@@ -6,7 +6,7 @@ Currently I am a graduate student at Kyung Hee University, South Korea in the de
 
 I am a student member of Association for Computing Machinery (ACM) and a member of Pakistan Engineering Council (PEC).
 
-My research interests include Machine Learning, Deep Learning, Computer Vision, Multimodal Learning and Medical Imaging.
+My research interests include Deep Learning, Computer Vision, Multimodal Learning and Medical Imaging.
 
 I also sometimes write [blogs](https://wajahat-alikhan.github.io/blog/).
 
