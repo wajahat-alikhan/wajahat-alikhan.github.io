@@ -8,9 +8,9 @@ I am a student member of Association for Computing Machinery (ACM) and a member 
 
 My research interests include Deep Learning, Computer Vision, Multimodal Learning and Medical Imaging.
 
-I also sometimes write [blogs](https://wajahat-alikhan.github.io/blog/).
+*I also sometimes write [blogs](https://wajahat-alikhan.github.io/blog/).*
 
-You can reach out to me by my email at wajahat@khu.ac.kr , wajahatalikhan@acm.org , [my linkedin](https://www.linkedin.com/in/wajahat-alikhan/) or can check out [my google scholar](https://scholar.google.com/citations?user=NBMWa-UAAAAJ&hl=en&oi=ao).
+
 
 > The unexamined life is not worth living -- Socrates
 
@@ -52,9 +52,11 @@ Some good resources:
 - [Deep Learning](https://course.fast.ai/)
 - [Computer Vision](https://www.youtube.com/watch?v=NfnWJUyUJYU&list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC)
 
+## Contact me :)
+You can reach out to me by my email at wajahat@khu.ac.kr , wajahatalikhan@acm.org , [my linkedin](https://www.linkedin.com/in/wajahat-alikhan/) or can check out [my google scholar](https://scholar.google.com/citations?user=NBMWa-UAAAAJ&hl=en&oi=ao).
 
 
-If you are looking to do Ph.D and want some advice from [Richard Hamming](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html) and [Andrej karpathy](https://karpathy.github.io/2016/09/07/phd/).
+*If you are looking to do a Ph.D and want some advice from [Richard Hamming](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html) and [Andrej karpathy](https://karpathy.github.io/2016/09/07/phd/).*
 
 
 ###### Random things about me --- I have traveled to almost 10 cities in Korea, I have won Galaxy buds pro in lottery at a conference, I missed my last subway in Japan...
