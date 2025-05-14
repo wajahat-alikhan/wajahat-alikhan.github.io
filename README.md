@@ -53,7 +53,7 @@ Some good resources:
 - [Computer Vision](https://www.youtube.com/watch?v=NfnWJUyUJYU&list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC)
 
 ## Contact me :)
-You can reach out to me by my email at wajahat@khu.ac.kr , wajahatalikhan@acm.org , [my linkedin](https://www.linkedin.com/in/wajahat-alikhan/) or can check out [my google scholar](https://scholar.google.com/citations?user=NBMWa-UAAAAJ&hl=en&oi=ao). You can also find my at my [huggingface](https://huggingface.co/wajahatalikhan) and [kaggle](https://www.kaggle.com/wajahatagi).
+You can reach out to me by my email at wajahat@khu.ac.kr , wajahatalikhan@acm.org , [my twitter/x](https://x.com/_wajahatalikhan) , [my linkedin](https://www.linkedin.com/in/wajahat-alikhan/) or can check out [my google scholar](https://scholar.google.com/citations?user=NBMWa-UAAAAJ&hl=en&oi=ao). You can also find my at my [huggingface](https://huggingface.co/wajahatalikhan) and [kaggle](https://www.kaggle.com/wajahatagi).
 
 
 *If you are looking to do a Ph.D and want some advice from [Richard Hamming](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html) and [Andrej karpathy](https://karpathy.github.io/2016/09/07/phd/).*
