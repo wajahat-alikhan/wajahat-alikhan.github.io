@@ -53,7 +53,14 @@ Some good resources:
 - [Computer Vision](https://www.youtube.com/watch?v=NfnWJUyUJYU&list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC)
 
 ## Contact me :)
-You can reach out to me by my email at wajahat@khu.ac.kr , wajahatalikhan@acm.org , [my twitter/x](https://x.com/_wajahatalikhan) , [my linkedin](https://www.linkedin.com/in/wajahat-alikhan/) or can check out [my google scholar](https://scholar.google.com/citations?user=NBMWa-UAAAAJ&hl=en&oi=ao). You can also find my at my [huggingface](https://huggingface.co/wajahatalikhan) and [kaggle](https://www.kaggle.com/wajahatagi).
+You can reach out to me by:
+<a href="mailto:wajahat@khu.ac.kr" style="background-color: #f0f0f0; color: black; padding: 5px 10px; text-decoration: none; border-radius: 5px; margin: 2px;">Email1</a>
+<a href="mailto:wajahatalikhan@acm.org" style="background-color: #f0f0f0; color: black; padding: 5px 10px; text-decoration: none; border-radius: 5px; margin: 2px;">Email2</a>
+<a href="https://x.com/_wajahatalikhan" style="background-color: #f0f0f0; color: black; padding: 5px 10px; text-decoration: none; border-radius: 5px; margin: 2px;">Twitter/X</a>
+<a href="https://www.linkedin.com/in/wajahat-alikhan/" style="background-color: #f0f0f0; color: black; padding: 5px 10px; text-decoration: none; border-radius: 5px; margin: 2px;">LinkedIn</a>
+<a href="https://scholar.google.com/citations?user=NBMWa-UAAAAJ&hl=en&oi=ao" style="background-color: #f0f0f0; color: black; padding: 5px 10px; text-decoration: none; border-radius: 5px; margin: 2px;">Google Scholar</a>
+<a href="https://huggingface.co/wajahatalikhan" style="background-color: #f0f0f0; color: black; padding: 5px 10px; text-decoration: none; border-radius: 5px; margin: 2px;">Hugging Face</a>
+<a href="https://www.kaggle.com/wajahatagi" style="background-color: #f0f0f0; color: black; padding: 5px 10px; text-decoration: none; border-radius: 5px; margin: 2px;">Kaggle</a>
 
 
 *If you are looking to do a Ph.D and want some advice from [Richard Hamming](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html) and [Andrej karpathy](https://karpathy.github.io/2016/09/07/phd/).*
