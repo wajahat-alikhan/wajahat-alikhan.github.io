@@ -1,0 +1,78 @@
+/* assets/css/custom-theme.css */
+
+:root {
+  --body-bg-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #1e6bb8;
+  --header-bg-color: #f2f2f2;
+  --header-text-color: #333333;
+  --button-bg-color: #e0e0e0;
+  --button-text-color: #000000;
+  --svg-icon-fill: #333333; /* For toggle button SVGs */
+}
+
+body {
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+}
+
+/* Theme's existing header styling might need to be considered.
+   This is a generic header background for the theme. */
+header {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  /* Add other header styles if needed to match jekyll-theme-minimal */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  --body-bg-color: #121212;
+  --text-color: #e0e0e0;
+  --link-color: #90caf9; /* A lighter blue for dark mode */
+  --header-bg-color: #1e1e1e;
+  --header-text-color: #e0e0e0;
+  --button-bg-color: #333333;
+  --button-text-color: #ffffff;
+  --svg-icon-fill: #e0e0e0; /* For toggle button SVGs in dark mode */
+}
+
+/* Toggle Button Styling */
+#theme-toggle-button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: 1px solid var(--text-color);
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  position: fixed; /* Or absolute, depending on header structure */
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+}
+
+#theme-toggle-button svg {
+  width: 18px; /* Adjust as needed */
+  height: 18px; /* Adjust as needed */
+  fill: var(--svg-icon-fill);
+}
+
+/* Hide one icon based on mode */
+.dark-mode #sun-icon {
+  display: inline-block;
+}
+.dark-mode #moon-icon {
+  display: none;
+}
+
+#sun-icon {
+  display: none; /* Hidden by default, shown in dark mode */
+}
+#moon-icon {
+  display: inline-block; /* Shown by default, hidden in dark mode */
+}
