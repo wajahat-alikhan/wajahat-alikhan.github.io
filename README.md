@@ -10,7 +10,11 @@ My research interests include Deep Learning, Multimodal Learning (CV & NLP) and 
 
 *I also sometimes write [blogs](https://wajahat-alikhan.github.io/blog/).*
 
+
+
 ## Find me on
+
+
 <a href="https://x.com/_wajahatalikhan" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; text-decoration: none;" title="Twitter"><svg role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" style="display: inline-block; width: 24px; height: 24px;"><title>X</title><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
 <a href="https://www.linkedin.com/in/wajahat-alikhan/" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; text-decoration: none;" title="LinkedIn"><svg role="img" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" style="display: inline-block; width: 24px; height: 24px;"><title>LinkedIn</title><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
 <a href="https://scholar.google.com/citations?user=NBMWa-UAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" style="margin-right: 10px; text-decoration: none;" title="Google Scholar"><svg role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" style="display: inline-block; width: 24px; height: 24px;"><title>Google Scholar</title><path d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></a>
