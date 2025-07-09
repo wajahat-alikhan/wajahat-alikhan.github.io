@@ -57,6 +57,7 @@ Some good resources:
 - [Linear Algebra](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/)
 - [Deep Learning](https://course.fast.ai/)
 - [Computer Vision](https://www.youtube.com/watch?v=NfnWJUyUJYU&list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC)
+- [LLM](https://youtube.com/playlist?list=PLoROMvodv4rOY23Y0BoGoBGgQ1zmU_MT_&si=pVSwHEglXAvKWq2p)
 
 
 *If you are looking to do a Ph.D and want some advice from [Richard Hamming](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html) and [Andrej karpathy](https://karpathy.github.io/2016/09/07/phd/).*
