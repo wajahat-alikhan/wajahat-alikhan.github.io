@@ -64,7 +64,7 @@ Some good resources:
 
 In case you wonder what I look like, come and say *Hi* if you ever bump into me somewhere... :)
 
-<img src="assets/profile.jpg" alt="Me in Busan, South Korea" style="width:180px; border-radius:50%; margin-top:15px;">
+<img src="assets/profile.jpg" alt="Me in Busan, South Korea" style="width:180px; border-radius:1px; margin-top:15px;">
 
 ###### Random things about me --- I have traveled to almost 10 cities in Korea, I have won Galaxy buds pro in lottery at a conference, I missed my last subway in Japan...
 
