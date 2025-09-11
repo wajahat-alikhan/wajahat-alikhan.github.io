@@ -64,11 +64,12 @@ Some good resources:
 
 In case you wonder what I look like, come and say *Hi* if you ever bump into me somewhere... :)
 
-<img src="assets/profile.jpg" alt="Me in Busan, South Korea" style="width:180px; border-radius:1px; margin-top:15px;">
+<img src="assets/profile_0.jpg" alt="Me in Busan, South Korea" style="width:180px; border-radius:1px; margin-top:15px;"> 
+<a href="https://mapmyvisitors.com/web/1bz9m"  title="Visit tracker"><img src="https://mapmyvisitors.com/map.png?d=voM43TbUYbisAp4Yc2_bQW53OGQpkzLD3CWhUKrAvG8&cl=ffffff" /></a>
 
 ###### Random things about me --- I have traveled to almost 10 cities in Korea, I have won Galaxy buds pro in lottery at a conference, I missed my last subway in Japan...
 
-<a href="https://mapmyvisitors.com/web/1bz9m"  title="Visit tracker"><img src="https://mapmyvisitors.com/map.png?d=voM43TbUYbisAp4Yc2_bQW53OGQpkzLD3CWhUKrAvG8&cl=ffffff" /></a>
+
 
 
 
