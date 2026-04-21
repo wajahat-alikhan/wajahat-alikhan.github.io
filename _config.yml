@@ -1,3 +1,13 @@
 theme: jekyll-theme-minimal
-title: Wajahat's homepage
-description: Bookmark this to keep an eye on my project updates!
+title: Wajahat Ali Khan
+logo: /assets/profile_0.jpg 
+description: AI Researcher | Multimodal Learning & Medical Imaging
+  <br><br>
+  <a href="https://scholar.google.com/citations?user=NBMWa-UAAAAJ">🎓 Google Scholar</a><br>
+  <a href="https://www.linkedin.com/in/wajahat-alikhan/">💼 LinkedIn</a><br>
+  <a href="https://huggingface.co/wajahatalikhan">🤗 Hugging Face</a><br>
+  <a href="mailto:wajahat@khu.ac.kr">✉️ Email Me</a>
+
+# Built-in theme social links
+github_username: wajahat-alikhan
+twitter_username: wajahatalikhan_
