@@ -1,0 +1,49 @@
+@import "{{ site.theme }}";
+
+/* Automatic Dark Mode based on OS/System Settings */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+  }
+  
+  /* Link colors (a nice soft blue/purple for dark mode) */
+  a {
+    color: #82aaff;
+  }
+  
+  a:hover {
+    color: #c792ea;
+  }
+  
+  /* Blockquote styling */
+  blockquote {
+    color: #a0a0a0;
+    border-left: 4px solid #4a4a4a;
+  }
+
+  /* Image opacity trick to make them less harsh on dark screens */
+  img {
+    opacity: .9;
+    transition: opacity .5s ease-in-out;
+  }
+
+  img:hover {
+    opacity: 1;
+  }
+  
+  /* Table borders */
+  table th, table td {
+    border: 1px solid #333333;
+  }
+  
+  /* Code blocks */
+  code {
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+  }
+}
