@@ -1,15 +1,16 @@
 👋 Hello , 안녕하세요 , السلام علیکم
 
 I am Wajahat Ali Khan, born and raised in Peshawar. I did my B.Sc in Electrical Engineering (Communication) from UET Peshawar, Pakistan and also did my initial internships and training at different kind of research centers there like NCAI (National Center of Artificial Intelligence) and NCCS (National Center of Cyber Security). 
+Then I did my MS in AI at Kyung Hee University, South Korea and did research in [PerCV Lab](https://cvlab.khu.ac.kr/) under the supervision of [Professor Lee Seungkyu](https://scholar.google.com/citations?user=3Pf6C6cAAAAJ&hl=en).
 
-Currently I am a graduate student at Kyung Hee University, South Korea in the department of AI, and am doing research in [PerCV Lab](https://cvlab.khu.ac.kr/) under the supervision of [Professor Lee Seungkyu](https://scholar.google.com/citations?user=3Pf6C6cAAAAJ&hl=en).
+Currently I work at a startup.
 
 I am a student member of Association for Computing Machinery (ACM) and a member of Pakistan Engineering Council (PEC).
 
 My research interests include Deep Learning, Multimodal Learning (CV & NLP) and Medical Imaging.
 
 
-You can also reach out to me by email: wajahat@khu.ac.kr
+You can also reach out to me by email: wajahat@khu.ac.kr or wajahat@hoongketechnologies.com
 
 *I also sometimes write [blogs](https://wajahat-alikhan.github.io/blog/).*
 
@@ -23,6 +24,8 @@ You can also reach out to me by email: wajahat@khu.ac.kr
 
 ## Publications
 * [Multimodal Learning for Autoencoders](https://dl.acm.org/doi/10.1145/3681756.3697974) - ACM SIGGRAPH Asia 2024 (Poster presentation)
+* [What does CLIP see per token?](https://www.linkedin.com/feed/update/urn:li:activity:7451559195604058112/) - CVPR 2026 (XAI4CV Workshop)
+
 
 
 > If I have seen further, it is by standing on the shoulders of giants -- Isaac Newton
@@ -31,7 +34,7 @@ You can also reach out to me by email: wajahat@khu.ac.kr
 
 
 ## Projects
-* Leading a collaborative project with Kyung Hee University Hospital at Gangdong for MRI to PET cross modal synthesis task.
+* Lead a collaborative project with Kyung Hee University Hospital at Gangdong for MRI to PET cross modal synthesis task.
 
 > Luck favors the prepared mind -- Louis Pasteur
 
