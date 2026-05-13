@@ -23,9 +23,8 @@ You can also reach out to me by email: wajahat@khu.ac.kr or wajahat@hoongketechn
 
 
 ## Publications
-* [Multimodal Learning for Autoencoders](https://dl.acm.org/doi/10.1145/3681756.3697974) - ACM SIGGRAPH Asia 2024 (Poster presentation)
-* [What does CLIP see per token?](https://www.linkedin.com/feed/update/urn:li:activity:7451559195604058112/) - CVPR 2026 (XAI4CV Workshop)
-
+* [Multimodal Learning for Autoencoders](https://dl.acm.org/doi/10.1145/3681756.3697974) - ACM SIGGRAPH Asia 2024 (Poster)
+* [What does CLIP see per token?](https://www.linkedin.com/feed/update/urn:li:activity:7451559195604058112/) - IEEE/CVF CVPR 2026 (Workshop)
 
 
 > If I have seen further, it is by standing on the shoulders of giants -- Isaac Newton
@@ -42,7 +41,7 @@ You can also reach out to me by email: wajahat@khu.ac.kr or wajahat@hoongketechn
 * Attended [ICMRI 2024](https://www.linkedin.com/posts/wajahat-alikhan_attendance-certificate-icmri-2024-activity-7261981808290914305-cKNh?utm_source=share&utm_medium=member_desktop) in Seoul, South Korea.
 * Attended and presented in [SIGGRAPH Asia 2024](https://www.linkedin.com/feed/update/urn:li:activity:7279899545914810368/) in Tokyo, Japan.
 * Attended and presented in [ICMRI 2025](https://www.linkedin.com/posts/wajahat-alikhan_icmri-2025-activity-7411648609038991360-0Zus?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUZZr4BHvI04XjghWF0O9mdcfKC_AESkQI) in Seoul, South Korea.
-
+* Paper got accepted at XAI4CV Workshop at CVPR 2026.
 
 
 ## Awards
