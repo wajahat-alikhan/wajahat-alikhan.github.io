@@ -24,7 +24,7 @@ You can also reach out to me by email: wajahat@khu.ac.kr or wajahat@hoongketechn
 
 ## Publications
 * [Multimodal Learning for Autoencoders](https://dl.acm.org/doi/10.1145/3681756.3697974) - ACM SIGGRAPH Asia 2024 (Poster)
-* [What does CLIP see per token?](https://www.linkedin.com/feed/update/urn:li:activity:7451559195604058112/) - IEEE/CVF CVPR 2026 (Workshop)
+* [What does CLIP see per token?](https://xai4cv-workshop.github.io/xai4cv2026/assets/papers/PP26.pdf) - IEEE/CVF CVPR 2026 (Workshop)
 
 
 > If I have seen further, it is by standing on the shoulders of giants -- Isaac Newton
