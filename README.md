@@ -1,9 +1,19 @@
-👋 Hello , 안녕하세요 , السلام علیکم
 
-I am Wajahat Ali Khan, born and raised in Peshawar. I did my B.Sc in Electrical Engineering (Communication) from UET Peshawar, Pakistan and also did my initial internships and training at different kind of research centers there like NCAI (National Center of Artificial Intelligence) and NCCS (National Center of Cyber Security). 
-Then I did my MS in AI at Kyung Hee University, South Korea and did research in [PerCV Lab](https://cvlab.khu.ac.kr/) under the supervision of [Professor Lee Seungkyu](https://scholar.google.com/citations?user=3Pf6C6cAAAAJ&hl=en). You can also check out my [Master thesis](https://khu.dcollection.net/srch/srchDetail/200000950684#).
+👋 Hello, 안녕하세요, السلام علیکم
 
-Currently I work at a startup and am based in Daejeon, South Korea.
+I am Wajahat Ali Khan, born and raised in Peshawar, Pakistan.
+
+I completed my B.Sc. in Electrical Engineering (Communication) from UET Peshawar, where I also did my initial internships and training at various research centers, including the National Center of Artificial Intelligence (NCAI) and the National Center of Cyber Security (NCCS).
+
+Then, I pursued my MS in AI at Kyung Hee University, South Korea, and conducted research at the [PerCV Lab](https://cvlab.khu.ac.kr/) under the supervision of [Professor Lee Seungkyu](https://scholar.google.com/citations?user=3Pf6C6cAAAAJ&hl=en) mainly in Multimodal Learning specifically [application and interpretability of Vision Language Model](https://khu.dcollection.net/srch/srchDetail/200000950684#).
+
+Currently, I have joined as a founding member at a startup and am based in Daejeon, South Korea.
+
+
+
+
+
+
 
 I am a student member of Association for Computing Machinery (ACM) and a member of Pakistan Engineering Council (PEC).
 
