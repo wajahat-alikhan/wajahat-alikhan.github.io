@@ -11,3 +11,15 @@ description: AI Researcher
 # Built-in theme social links
 github_username: wajahat-alikhan
 twitter_username: wajahatalikhan_
+plugins:
+  - jekyll-readme-index
+  - jekyll-default-layout
+
+# Blog posts (moved in from the old separate blog repo; same URLs)
+permalink: /blog/:year/:month/:day/:title:output_ext
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

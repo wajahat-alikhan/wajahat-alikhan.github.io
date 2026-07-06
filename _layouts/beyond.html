@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include theme-head.html %}
+
+{% seo %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "/assets/css/beyond.css?v=" | append: site.github.build_revision | relative_url }}">
+  </head>
+  <body class="beyond vibe-{{ page.vibe | default: 'hub' }}">
+    {% include theme-toggle.html %}
+
+    <div class="beyond-wrap">
+      <nav class="beyond-nav">
+        <a class="back-home" href="{{ "/" | relative_url }}">← Wajahat Ali Khan</a>
+        <div class="topic-pills">
+          <a class="pill" href="{{ "/beyond/" | relative_url }}">Beyond</a>
+          <a class="pill" href="{{ "/photography/" | relative_url }}">Photography</a>
+          <a class="pill" href="{{ "/books/" | relative_url }}">Books</a>
+          <a class="pill" href="{{ "/anime-films/" | relative_url }}">Anime & Films</a>
+          <a class="pill" href="{{ "/art/" | relative_url }}">Art</a>
+        </div>
+      </nav>
+
+      <section class="beyond-content">
+
+      {{ content }}
+
+      </section>
+    </div>
+    <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+  </body>
+</html>

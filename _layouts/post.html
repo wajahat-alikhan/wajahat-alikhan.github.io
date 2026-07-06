@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include theme-head.html %}
+
+{% seo %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "/assets/css/blog.css?v=" | append: site.github.build_revision | relative_url }}">
+  </head>
+  <body class="reading">
+    {% include theme-toggle.html %}
+
+    <div class="reading-wrap">
+      <nav class="reading-nav">
+        <a href="{{ "/blog/" | relative_url }}">← Thoughts</a>
+      </nav>
+
+      <article class="post">
+        <header>
+          <h1 class="post-title">{{ page.title }}</h1>
+          <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+        </header>
+
+        <div class="post-content">
+          {{ content }}
+        </div>
+      </article>
+
+      <nav class="post-footer">
+        <a href="{{ "/blog/" | relative_url }}">← All posts</a> · <a href="{{ "/" | relative_url }}">Home</a>
+      </nav>
+    </div>
+    <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+  </body>
+</html>

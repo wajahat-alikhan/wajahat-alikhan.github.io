@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include theme-head.html %}
+
+{% seo %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "/assets/css/blog.css?v=" | append: site.github.build_revision | relative_url }}">
+  </head>
+  <body class="reading">
+    {% include theme-toggle.html %}
+
+    <div class="reading-wrap">
+      <nav class="reading-nav">
+        <a href="{{ "/" | relative_url }}">← Wajahat Ali Khan</a>
+      </nav>
+
+      <header class="blog-header">
+        <h1>Thoughts</h1>
+        <p class="blog-tagline">A researcher's musings</p>
+      </header>
+
+      {{ content }}
+
+      <ul class="post-list">
+        {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+  </body>
+</html>

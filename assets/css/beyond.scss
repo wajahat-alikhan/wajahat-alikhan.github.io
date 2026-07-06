@@ -1,0 +1,647 @@
+---
+---
+
+/* ================================================================
+   Beyond Research — each subsection is its own world:
+   hub          neutral foyer with four doors, each in its room's style
+   photography  dark gallery, Space Grotesk, grayscale→color photos
+   books        parchment & ink, EB Garamond, drop cap, slow fades
+   anime        cinema dark, Bebas Neue, crimson accent, slide-ins
+   art          white gallery, DM Serif Display, painted underline
+   ================================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body.beyond {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 16.5px;
+  line-height: 1.8;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+.beyond-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 36px 28px 72px;
+}
+
+/* ---------------- Shared: top nav ---------------- */
+
+.beyond-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 52px;
+}
+
+.back-home {
+  font-family: var(--head-font);
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.back-home:hover {
+  color: var(--accent);
+}
+
+.topic-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  font-family: var(--body-font);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 4px 13px;
+  border-radius: 999px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.pill:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ---------------- Shared: content basics ---------------- */
+
+.beyond-content h1 {
+  font-family: var(--head-font);
+  margin: 0 0 0.5em;
+}
+
+.beyond-content h2 {
+  font-family: var(--head-font);
+  margin: 2.2em 0 0.6em;
+}
+
+.beyond-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.beyond-content a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.beyond-content ul {
+  padding-left: 1.2em;
+}
+
+.beyond-content li {
+  margin: 0.5em 0;
+}
+
+.beyond-content li::marker {
+  color: var(--accent);
+}
+
+.beyond-content blockquote {
+  margin: 2.6em 0;
+  padding: 0 0 0 1.5em;
+  border-left: 3px solid var(--accent);
+}
+
+.beyond-content blockquote p {
+  font-family: var(--head-font);
+  font-style: italic;
+  font-size: 1.12rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.beyond-content img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* ---------------- Shared: photo grid ---------------- */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+  margin: 26px 0;
+}
+
+.photo-grid a {
+  border-bottom: none;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-grid a:hover {
+  transform: translateY(-5px);
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.photo-grid a:hover img {
+  transform: scale(1.06);
+}
+
+/* ---------------- Shared: theme toggle ---------------- */
+
+#theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1000;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background-color: var(--bg);
+  cursor: pointer;
+  font-size: 19px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.4s ease, border-color 0.4s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+}
+
+#theme-toggle .toggle-icon::before {
+  content: "🌙";
+}
+
+html.dark #theme-toggle .toggle-icon::before {
+  content: "☀️";
+}
+
+/* ---------------- Shared: scroll reveal ---------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .beyond-content h1,
+  .beyond-content h1::after {
+    animation: none !important;
+  }
+}
+
+/* ================================================================
+   HUB — a neutral foyer; each door card wears its room's style
+   ================================================================ */
+
+body.vibe-hub {
+  --bg: #f7f5f1;
+  --text: #26221c;
+  --muted: #7d766b;
+  --accent: #8a6d4e;
+  --line: #e2dcd1;
+  --head-font: "Fraunces", Georgia, serif;
+  --body-font: "Inter", -apple-system, sans-serif;
+}
+
+html.dark body.vibe-hub {
+  --bg: #171512;
+  --text: #e8e2d7;
+  --muted: #97907f;
+  --accent: #c8a878;
+  --line: #2d2921;
+}
+
+.vibe-hub .beyond-content h1 {
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.doors {
+  list-style: none;
+  padding: 0;
+  margin: 2.2em 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.doors li {
+  margin: 0;
+  border-radius: 14px;
+  padding: 26px 28px 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.doors li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+}
+
+.doors h2 {
+  margin: 0 0 0.4em;
+  font-size: 1.3rem;
+}
+
+.doors a {
+  border-bottom: none;
+}
+
+.doors p, .doors li {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* Door 1 — Photography: the dark gallery */
+.doors li:nth-child(1) {
+  background: #101010;
+  color: #d9d9d9;
+  border: 1px solid #2a2a2a;
+}
+.doors li:nth-child(1) h2 {
+  font-family: "Space Grotesk", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+.doors li:nth-child(1) a { color: #ffffff; }
+.doors li:nth-child(1) a:hover { color: #bdbdbd; }
+
+/* Door 2 — Books: parchment & ink */
+.doors li:nth-child(2) {
+  background: #f2e8d5;
+  color: #4a3b26;
+  border: 1px solid #ddcdb0;
+}
+.doors li:nth-child(2) h2 {
+  font-family: "EB Garamond", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+}
+.doors li:nth-child(2) a { color: #4a3b26; }
+.doors li:nth-child(2) a:hover { color: #8a5a2b; }
+
+/* Door 3 — Anime & Films: the cinema */
+.doors li:nth-child(3) {
+  background: #131318;
+  color: #dcd9e4;
+  border: 1px solid #2a2a35;
+}
+.doors li:nth-child(3) h2 {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.08em;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.doors li:nth-child(3) a { color: #ff4d5e; }
+.doors li:nth-child(3) a:hover { color: #ff8a95; }
+
+/* Door 4 — Art: the white gallery */
+.doors li:nth-child(4) {
+  background: #ffffff;
+  color: #26222b;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(120deg, #2f86c9, #7c5cff, #d94f70, #d98e04);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.doors li:nth-child(4) h2 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+.doors li:nth-child(4) a { color: #26222b; }
+.doors li:nth-child(4) a:hover { color: #7c5cff; }
+
+html.dark .doors li:nth-child(4) {
+  background-image: linear-gradient(#211f26, #211f26), linear-gradient(120deg, #5cabe8, #a48cff, #f4728f, #f0b32e);
+  color: #ece8f2;
+}
+html.dark .doors li:nth-child(4) a { color: #ece8f2; }
+html.dark .doors li:nth-child(4) a:hover { color: #a48cff; }
+
+/* ================================================================
+   PHOTOGRAPHY — a photo gallery: white walls by day, dark by night;
+   photos are the color either way
+   ================================================================ */
+
+body.vibe-photography {
+  --bg: #f4f4f2;
+  --text: #1c1c1c;
+  --muted: #6e6e6e;
+  --accent: #000000;
+  --line: #dcdcd8;
+  --head-font: "Space Grotesk", sans-serif;
+  --body-font: "Inter", -apple-system, sans-serif;
+}
+
+html.dark body.vibe-photography {
+  --bg: #0e0e0e;
+  --text: #e6e6e6;
+  --muted: #9a9a9a;
+  --accent: #ffffff;
+  --line: #2c2c2c;
+}
+
+.vibe-photography .beyond-content h1 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  animation: tracking-in 1.1s ease both;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.5em;
+}
+
+@keyframes tracking-in {
+  from { letter-spacing: 0.02em; opacity: 0; }
+  to   { letter-spacing: 0.24em; opacity: 1; }
+}
+
+.vibe-photography .photo-grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.vibe-photography .photo-grid img {
+  height: 220px;
+  border-radius: 4px;
+  filter: grayscale(55%) contrast(1.02);
+}
+
+.vibe-photography .photo-grid a {
+  border-radius: 4px;
+}
+
+.vibe-photography .photo-grid a:hover img {
+  filter: grayscale(0%);
+}
+
+.vibe-photography .beyond-content blockquote {
+  border-left: 1px solid var(--muted);
+}
+
+/* ================================================================
+   BOOKS — parchment by day, leather-bound night; EB Garamond
+   ================================================================ */
+
+body.vibe-books {
+  --bg: #f6eedd;
+  --text: #3d3122;
+  --muted: #7d6b52;
+  --accent: #8a5a2b;
+  --line: #e0d2b8;
+  --head-font: "EB Garamond", Georgia, serif;
+  --body-font: "EB Garamond", Georgia, serif;
+}
+
+html.dark body.vibe-books {
+  --bg: #1f1812;
+  --text: #e7dac1;
+  --muted: #a8946f;
+  --accent: #cfa165;
+  --line: #382e21;
+}
+
+body.vibe-books {
+  font-size: 19px;
+  line-height: 1.85;
+}
+
+.vibe-books .beyond-content h1 {
+  font-size: clamp(2.5rem, 6vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  animation: settle 1.4s ease both;
+}
+
+@keyframes settle {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Drop cap on the opening paragraph */
+.vibe-books .beyond-content h1 + p::first-letter {
+  font-size: 3.1em;
+  font-weight: 600;
+  float: left;
+  line-height: 0.85;
+  padding: 0.08em 0.12em 0 0;
+  color: var(--accent);
+}
+
+.vibe-books .beyond-content blockquote {
+  border: none;
+  padding: 0 2em;
+  text-align: center;
+}
+
+.vibe-books .beyond-content blockquote p {
+  font-size: 1.3rem;
+}
+
+.vibe-books .beyond-content blockquote::before {
+  content: "❦";
+  display: block;
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 0.6em;
+}
+
+.vibe-books .reveal {
+  transition-duration: 1s;
+}
+
+/* ================================================================
+   ANIME & FILMS — a dark cinema; Bebas Neue, crimson accent
+   ================================================================ */
+
+body.vibe-anime {
+  --bg: #f3f2f5;
+  --text: #1d1b24;
+  --muted: #6d6880;
+  --accent: #d92b41;
+  --line: #dcd9e4;
+  --head-font: "Bebas Neue", sans-serif;
+  --body-font: "Inter", -apple-system, sans-serif;
+}
+
+html.dark body.vibe-anime {
+  --bg: #101014;
+  --text: #eceaf0;
+  --muted: #8f8b9c;
+  --accent: #ff4d5e;
+  --line: #2a2a35;
+}
+
+.vibe-anime .beyond-content h1 {
+  font-size: clamp(3rem, 9vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  animation: marquee-in 0.7s cubic-bezier(0.2, 0.8, 0.25, 1) both;
+}
+
+@keyframes marquee-in {
+  from { opacity: 0; transform: translateX(-40px) skewX(-6deg); }
+  to   { opacity: 1; transform: none; }
+}
+
+.vibe-anime .beyond-content h1::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 5px;
+  background: var(--accent);
+  margin-top: 10px;
+  animation: bar-grow 0.9s 0.3s ease both;
+}
+
+@keyframes bar-grow {
+  from { width: 0; }
+  to   { width: 72px; }
+}
+
+.vibe-anime .beyond-content h2 {
+  letter-spacing: 0.05em;
+  font-size: 1.9rem;
+  font-weight: 400;
+}
+
+.vibe-anime .beyond-content li::marker {
+  content: "▸ ";
+}
+
+/* Quote styled like a subtitle at the bottom of a frame */
+.vibe-anime .beyond-content blockquote {
+  border: none;
+  background: #000000;
+  border-radius: 6px;
+  padding: 1.1em 1.6em;
+  text-align: center;
+}
+
+.vibe-anime .beyond-content blockquote p {
+  font-family: var(--body-font);
+  font-style: normal;
+  color: #f5f3e8;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* ================================================================
+   ART — white gallery walls, DM Serif Display, painted underline
+   ================================================================ */
+
+body.vibe-art {
+  --bg: #ffffff;
+  --text: #26222b;
+  --muted: #766f80;
+  --accent: #7c5cff;
+  --line: #eae7ef;
+  --head-font: "DM Serif Display", Georgia, serif;
+  --body-font: "Inter", -apple-system, sans-serif;
+}
+
+html.dark body.vibe-art {
+  --bg: #1b191f;
+  --text: #ece8f2;
+  --muted: #a09aad;
+  --accent: #a48cff;
+  --line: #322e3a;
+}
+
+.vibe-art .beyond-content h1 {
+  font-size: clamp(2.6rem, 7vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.1;
+  position: relative;
+  display: inline-block;
+}
+
+.vibe-art .beyond-content h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.02em;
+  height: 0.22em;
+  width: 100%;
+  background: linear-gradient(90deg, #2f86c9, #7c5cff, #d94f70, #d98e04);
+  border-radius: 3px;
+  opacity: 0.55;
+  z-index: -1;
+  transform-origin: left;
+  animation: paint-stroke 1s 0.2s cubic-bezier(0.6, 0, 0.3, 1) both;
+}
+
+@keyframes paint-stroke {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.vibe-art .beyond-content li:nth-child(4n+1)::marker { color: #2f86c9; }
+.vibe-art .beyond-content li:nth-child(4n+2)::marker { color: #d98e04; }
+.vibe-art .beyond-content li:nth-child(4n+3)::marker { color: #d94f70; }
+.vibe-art .beyond-content li:nth-child(4n+4)::marker { color: #7c5cff; }
+
+.vibe-art .beyond-content blockquote {
+  border-left: none;
+  padding: 1.2em 1.6em;
+  border-radius: 12px;
+  background:
+    linear-gradient(var(--bg), var(--bg)) padding-box,
+    linear-gradient(120deg, #2f86c9, #7c5cff, #d94f70, #d98e04) border-box;
+  border: 2px solid transparent;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 640px) {
+  .beyond-wrap {
+    padding: 28px 20px 56px;
+  }
+
+  .beyond-nav {
+    margin-bottom: 36px;
+  }
+
+  #theme-toggle {
+    top: auto;
+    bottom: 18px;
+  }
+}

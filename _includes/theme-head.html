@@ -1,0 +1,12 @@
+<script>
+  // Apply saved/system theme before first paint to avoid a flash.
+  // ?theme=light|dark in the URL overrides (handy for sharing/testing).
+  (function () {
+    var qs = new URLSearchParams(window.location.search).get('theme');
+    var saved = localStorage.getItem('theme');
+    var dark = qs ? qs === 'dark'
+             : saved ? saved === 'dark'
+             : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (dark) document.documentElement.classList.add('dark');
+  })();
+</script>
