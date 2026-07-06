@@ -18,6 +18,10 @@ plugins:
 # Blog posts (moved in from the old separate blog repo; same URLs)
 permalink: /blog/:year/:month/:day/:title:output_ext
 
+# GitHub Pages builds in UTC (9h behind KST) — without this, anything
+# dated "today" in Korea can be skipped as future-dated
+future: true
+
 # Beyond Research sections — each is a folder; drop an .md file in and
 # it appears on that section's page, just like blog posts
 collections:
