@@ -1,11 +1,11 @@
 
 👋 Hello, 안녕하세요, السلام علیکم
 
-I am Wajahat Ali Khan, born and raised in Peshawar.
+I am Wajahat Ali Khan (وجاہت علی خان), born and raised in Peshawar.
 
 I completed my B.Sc. in Electrical Engineering (Communication) from UET, where I also did my initial internships and training at various research centers, including the National Center of Artificial Intelligence (NCAI) and the National Center of Cyber Security (NCCS).
 
-Then, I pursued my MS in AI at Kyung Hee University, South Korea, and conducted research at the [PerCV Lab](https://cvlab.khu.ac.kr/) under the supervision of [Professor Lee Seungkyu](https://scholar.google.com/citations?user=3Pf6C6cAAAAJ&hl=en) mainly in Multimodal Learning and specifically in [application and interpretability of Vision Language Model](https://khu.dcollection.net/srch/srchDetail/200000950684#).
+Then, I pursued my MS in AI at Kyung Hee University, South Korea, and conducted research at the [PerCV Lab](https://cvlab.khu.ac.kr/) under the supervision of [Professor Lee Seungkyu](https://scholar.google.com/citations?user=3Pf6C6cAAAAJ&hl=en) mainly in Multimodal Learning and specifically in [applications and interpretability of Vision Language Model](https://khu.dcollection.net/srch/srchDetail/200000950684#).
 
 Currently, I have joined as a founding member at a [startup](https://hoongketechnologies.com/) and am based in Daejeon, South Korea.
 
