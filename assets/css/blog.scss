@@ -184,6 +184,18 @@ body.reading {
   border-radius: 8px;
 }
 
+.post-content figure {
+  margin: 2.2em 0;
+}
+
+.post-content figcaption {
+  margin-top: 10px;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 blockquote {
   border: none;
   text-align: center;

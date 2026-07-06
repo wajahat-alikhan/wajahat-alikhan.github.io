@@ -17,9 +17,50 @@ plugins:
 
 # Blog posts (moved in from the old separate blog repo; same URLs)
 permalink: /blog/:year/:month/:day/:title:output_ext
+
+# Beyond Research sections — each is a folder; drop an .md file in and
+# it appears on that section's page, just like blog posts
+collections:
+  photography:
+    output: true
+    permalink: /photography/:name/
+  books:
+    output: true
+    permalink: /books/:name/
+  cinema:
+    output: true
+    permalink: /cinema/:name/
+  art:
+    output: true
+    permalink: /art/:name/
+
 defaults:
   - scope:
       path: ""
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: photography
+    values:
+      layout: beyond-entry
+      vibe: photography
+  - scope:
+      path: ""
+      type: books
+    values:
+      layout: beyond-entry
+      vibe: books
+  - scope:
+      path: ""
+      type: cinema
+    values:
+      layout: beyond-entry
+      vibe: anime
+  - scope:
+      path: ""
+      type: art
+    values:
+      layout: beyond-entry
+      vibe: art

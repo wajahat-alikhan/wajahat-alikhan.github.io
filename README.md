@@ -15,8 +15,6 @@ I am a student member of Association for Computing Machinery (ACM) and a member 
 
 You can also reach out to me by email: wajahat@khu.ac.kr or wajahat@hoongketechnologies.com
 
-*I also sometimes write [blogs](/blog/).*
-
 > The unexamined life is not worth living -- Socrates
 
 ## Publications
@@ -49,16 +47,6 @@ Some good resources:
 - [LLM](https://youtube.com/playlist?list=PLoROMvodv4rOY23Y0BoGoBGgQ1zmU_MT_&si=pVSwHEglXAvKWq2p)
 
 *If you are looking to do a Ph.D., here is some advice from [Richard Hamming](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html) and [Andrej Karpathy](https://karpathy.github.io/2016/09/07/phd/).*
-
-## Beyond Research
-Away from the lab, a few things keep me curious:
-
-* **[Photography](/photography/)** --- I like carrying a camera around; wandering through cities in Korea and Japan has given me plenty to point it at.
-* **[Books & Philosophy](/books/)** --- you may have noticed the quotes scattered across this page. Socrates started it.
-* **[Anime & Films](/anime-films/)** --- always happy to trade recommendations.
-* **[Art](/art/)** --- galleries, exhibitions, and the occasional attempt of my own.
-
-> We suffer more often in imagination than in reality -- Seneca
 
 <a href="assets/profile_0.jpg" target="_blank"><em>[In case you wonder what I look like, come and say Hi if you ever bump into me somewhere... :)]</em></a>
 
