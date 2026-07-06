@@ -65,17 +65,26 @@
   setTimeout(tick, 600);
 })();
 
-// Reveal content as it scrolls into view
+// Reveal content as it scrolls into view, cascading items that
+// appear together (staggered by ~70ms, capped)
 (function () {
-  var items = document.querySelectorAll('section > h2, section > p, section > ul, section > ol, section > blockquote, section > h6');
+  var items = document.querySelectorAll('section > h2, section > p, section > ul, section > ol, section > blockquote, section > h6, section > figure, section .photo-grid figure');
   if (!('IntersectionObserver' in window)) return;
 
   var observer = new IntersectionObserver(function (entries) {
+    var delay = 0;
     entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      el.style.transitionDelay = delay + 'ms';
+      delay = Math.min(delay + 70, 420);
+      el.classList.add('visible');
+      observer.unobserve(el);
+      // Clear the stagger delay so it never slows hover transitions later
+      el.addEventListener('transitionend', function clear() {
+        el.style.transitionDelay = '';
+        el.removeEventListener('transitionend', clear);
+      });
     });
   }, { threshold: 0.1 });
 

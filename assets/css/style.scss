@@ -167,6 +167,31 @@ blockquote:hover {
   transform: translateX(4px);
 }
 
+/* ---------- Page transitions (View Transitions API) ----------
+   Older browsers ignore all of this and navigate instantly. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation-duration: 0.18s;
+}
+
+::view-transition-new(root) {
+  animation-duration: 0.25s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
 /* Captioned images: <figure><img ...><figcaption>text</figcaption></figure> */
 section figure {
   margin: 2em 0;

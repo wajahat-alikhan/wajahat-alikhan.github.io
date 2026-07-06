@@ -29,6 +29,57 @@ html.dark body.reading {
   --code-line: #3a3020;
 }
 
+/* ---------------- Page transitions (View Transitions API) ----------------
+   A slow warm crossfade, like turning a page. Older browsers ignore it. */
+
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes vt-fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes vt-fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes vt-rise {
+  from { opacity: 0; transform: translateY(22px); }
+}
+
+::view-transition {
+  background-color: #f9f4e9;
+}
+
+html.dark::view-transition {
+  background-color: #1c1712;
+}
+
+::view-transition-old(root) {
+  animation: vt-fade-out 0.28s ease both;
+}
+
+::view-transition-new(root) {
+  animation: vt-fade-in 0.5s ease 0.18s both;
+}
+
+/* Opening a post slides it up gently */
+html:has(body.post)::view-transition-new(root) {
+  animation: vt-rise 0.4s ease 0.12s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
