@@ -7,9 +7,9 @@ I completed my B.Sc. in Electrical Engineering (Communication) from UET, where I
 
 Then, I pursued my MS in AI at Kyung Hee University, South Korea, and conducted research at the [PerCV Lab](https://cvlab.khu.ac.kr/) under the supervision of [Professor Lee Seungkyu](https://scholar.google.com/citations?user=3Pf6C6cAAAAJ&hl=en) mainly in Multimodal Learning and specifically in [applications and interpretability of Vision Language Model](https://khu.dcollection.net/srch/srchDetail/200000950684#).
 
-Currently, I have joined as a founding member at a [startup](https://hoongketechnologies.com/) and am based in Daejeon, South Korea.
+Currently, I have joined a [startup](https://hoongketechnologies.com/) as a founding member and am based in Daejeon, South Korea.
 
-My research interests include Deep Learning, Multimodal Learning (CV & NLP) and Medical Imaging.
+My research interests include Multimodal Learning, Interpretability and Explainability and Medical Imaging.
 
 I am a student member of Association for Computing Machinery (ACM) and a member of Pakistan Engineering Council (PEC).
 
