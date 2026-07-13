@@ -36,6 +36,11 @@ You can also reach out to me by email: wajahat@khu.ac.kr or wajahat@hoongketechn
 * Attended and presented in [SIGGRAPH Asia 2024](https://www.linkedin.com/feed/update/urn:li:activity:7279899545914810368/) in Tokyo, Japan.
 * Attended and presented in [ICMRI 2025](https://www.linkedin.com/posts/wajahat-alikhan_icmri-2025-activity-7411648609038991360-0Zus?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUZZr4BHvI04XjghWF0O9mdcfKC_AESkQI) in Seoul, South Korea.
 * Paper got accepted at [XAI4CV Workshop at CVPR 2026](https://www.linkedin.com/feed/update/urn:li:activity:7451559195604058112/) in Denver, USA.
+* Attended [ICML 2026](https://www.linkedin.com/feed/update/urn:li:activity:7482244036825600000/) in Seoul, South Korea.
+
+
+
+
 
 ## Learn
 Some good resources:
