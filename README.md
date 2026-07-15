@@ -24,8 +24,7 @@ You can also reach out to me by email: wajahat@khu.ac.kr or wajahat@hoongketechn
 > If I have seen further, it is by standing on the shoulders of giants -- Isaac Newton
 
 ## Projects
-* Led a collaborative project with Kyung Hee University Hospital at Gangdong for [MRI to PET cross modal synthesis task](https://www.linkedin.com/posts/wajahat-alikhan_attendance-certificate-icmri-2024-activity-7261981808290914305-cKNh?utm_source=share&utm_medium=member_desktop).
-
+* Led a collaborative project with Kyung Hee University Hospital at Gangdong for [MRI to PET cross modal synthesis task](https://www.linkedin.com/posts/wajahat-alikhan_icmri-2025-activity-7411648609038991360-0Zus?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUZZr4BHvI04XjghWF0O9mdcfKC_AESkQI).
 ## Awards
 * Recipient of the fully funded Presidential Scholarship at KHU (2023–2025).
 
