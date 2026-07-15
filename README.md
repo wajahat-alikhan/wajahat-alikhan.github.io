@@ -5,7 +5,7 @@ I am Wajahat Ali Khan (وجاہت علی خان), born and raised in Peshawar.
 
 I completed my B.Sc. in Electrical Engineering (Communication) from UET, where I also did my initial internships and training at various research centers, including the National Center of Artificial Intelligence (NCAI) and the National Center of Cyber Security (NCCS).
 
-Then, I pursued my MS in AI at Kyung Hee University, South Korea, and conducted research at the [PerCV Lab](https://cvlab.khu.ac.kr/) under the supervision of [Professor Lee Seungkyu](https://scholar.google.com/citations?user=3Pf6C6cAAAAJ&hl=en) mainly in Multimodal Learning and specifically in [applications and interpretability of Vision Language Model](https://khu.dcollection.net/srch/srchDetail/200000950684#).
+Then, I pursued my MS in AI at Kyung Hee University, South Korea, and conducted research at the [PerCV Lab](https://cvlab.khu.ac.kr/) under the supervision of [Professor Lee Seungkyu](https://scholar.google.com/citations?user=3Pf6C6cAAAAJ&hl=en) mainly in Multimodal Learning and specifically in [applications and interpretability of Vision Language Models](https://khu.dcollection.net/srch/srchDetail/200000950684#).
 
 Currently, I have joined a [startup](https://hoongketechnologies.com/) as a founding member and am based in Daejeon, South Korea.
 
@@ -24,7 +24,7 @@ You can also reach out to me by email: wajahat@khu.ac.kr or wajahat@hoongketechn
 > If I have seen further, it is by standing on the shoulders of giants -- Isaac Newton
 
 ## Projects
-* Led a collaborative project with Kyung Hee University Hospital at Gangdong for MRI to PET cross modal synthesis task.
+* Led a collaborative project with Kyung Hee University Hospital at Gangdong for [MRI to PET cross modal synthesis task](https://www.linkedin.com/posts/wajahat-alikhan_attendance-certificate-icmri-2024-activity-7261981808290914305-cKNh?utm_source=share&utm_medium=member_desktop).
 
 ## Awards
 * Recipient of the fully funded Presidential Scholarship at KHU (2023–2025).
