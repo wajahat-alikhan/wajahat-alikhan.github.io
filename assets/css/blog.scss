@@ -2,295 +2,340 @@
 ---
 
 /* ================================================================
-   "Thoughts" — a reading room.
-   Warm paper, Literata (designed for long-form reading), generous
-   line-height, drop caps, and a quiet reading progress bar.
+   "Thoughts" — gwern.net-inspired essay design.
+   Austere monochrome, Source Serif, justified & hyphenated text,
+   centered title with a small-caps metadata line, abstract block,
+   floating table of contents, margin sidenotes on wide screens.
    ================================================================ */
 
-body.reading {
-  --bg: #f9f4e9;
-  --text: #3a3226;
-  --muted: #96876c;
-  --accent: #8c5a2b;
-  --accent-strong: #5c3a18;
-  --line: #e7ddc9;
-  --code-bg: #f1e9d7;
-  --code-line: #e2d6bc;
+body.gwern {
+  --bg: #ffffff;
+  --text: #000000;
+  --muted: #757575;
+  --line: #cccccc;
+  --line-light: #e4e4e4;
+  --box-bg: #f7f7f7;
+  --code-bg: #f5f5f5;
 }
 
-html.dark body.reading {
-  --bg: #1c1712;
-  --text: #ded2ba;
-  --muted: #96876c;
-  --accent: #cfa165;
-  --accent-strong: #e8c68f;
-  --line: #352c1f;
-  --code-bg: #262017;
-  --code-line: #3a3020;
+html.dark body.gwern {
+  --bg: #131313;
+  --text: #d8d8d8;
+  --muted: #8f8f8f;
+  --line: #444444;
+  --line-light: #2e2e2e;
+  --box-bg: #1c1c1c;
+  --code-bg: #1f1f1f;
 }
 
-/* ---------------- Page transitions (View Transitions API) ----------------
-   A slow warm crossfade, like turning a page. Older browsers ignore it. */
-
+/* A quick, quiet crossfade between pages — no showy motion. */
 @view-transition {
   navigation: auto;
 }
 
-@keyframes vt-fade-out {
-  to { opacity: 0; }
-}
-
-@keyframes vt-fade-in {
-  from { opacity: 0; }
-}
-
-@keyframes vt-rise {
-  from { opacity: 0; transform: translateY(22px); }
-}
-
-::view-transition {
-  background-color: #f9f4e9;
-}
-
-html.dark::view-transition {
-  background-color: #1c1712;
-}
-
 ::view-transition-old(root) {
-  animation: vt-fade-out 0.28s ease both;
+  animation: vt-out 0.1s ease both;
 }
 
 ::view-transition-new(root) {
-  animation: vt-fade-in 0.5s ease 0.18s both;
+  animation: vt-in 0.16s ease both;
 }
 
-/* Opening a post slides it up gently */
-html:has(body.post)::view-transition-new(root) {
-  animation: vt-rise 0.4s ease 0.12s both;
-}
+@keyframes vt-out { to { opacity: 0; } }
+@keyframes vt-in { from { opacity: 0; } }
 
 @media (prefers-reduced-motion: reduce) {
-  @view-transition {
-    navigation: none;
-  }
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 0s !important;
-    animation-delay: 0s !important;
-  }
+  @view-transition { navigation: none; }
 }
 
 * {
   box-sizing: border-box;
 }
 
-body.reading {
+body.gwern {
   margin: 0;
   background-color: var(--bg);
   color: var(--text);
-  font-family: "Literata", "Iowan Old Style", Georgia, serif;
-  font-size: 18px;
-  line-height: 1.85;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.reading-wrap {
-  max-width: 42em;
+.essay-wrap {
+  max-width: 44em;
   margin: 0 auto;
-  padding: 36px 24px 80px;
+  padding: 30px 24px 80px;
 }
 
-/* ---------------- Nav ---------------- */
+/* ---------------- Top nav / footer ---------------- */
 
-.reading-nav a,
-.post-footer a {
+.top-nav {
+  text-align: center;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+  font-size: 0.95rem;
+}
+
+.top-nav a,
+.essay-footer a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.2s ease;
 }
 
-.reading-nav a:hover,
-.post-footer a:hover {
-  color: var(--accent);
+.top-nav a:hover,
+.essay-footer a:hover {
+  color: var(--text);
+  text-decoration: underline;
 }
 
-.post-footer {
-  margin-top: 3.5em;
-  padding-top: 1.5em;
-  border-top: 1px solid var(--line);
+.top-nav .sep {
+  color: var(--line);
+  margin: 0 0.4em;
 }
 
-/* ---------------- Blog header ---------------- */
-
-.blog-header {
-  margin: 48px 0 40px;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 28px;
+.essay-footer {
+  margin-top: 4em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--line-light);
+  text-align: center;
+  font-size: 0.9rem;
 }
 
-.blog-header h1 {
-  font-size: 2.6rem;
+/* ---------------- Title block ---------------- */
+
+.essay-header {
+  margin: 2.2em 0 1.8em;
+  text-align: center;
+}
+
+.essay-title {
+  font-size: 2.15rem;
   font-weight: 600;
+  line-height: 1.2;
   margin: 0;
-  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
-.blog-tagline {
-  margin: 6px 0 0;
+.page-metadata {
+  margin-top: 0.7em;
   color: var(--muted);
-  font-style: italic;
+  font-size: 0.85rem;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
 }
 
-/* ---------------- Post list ---------------- */
+.page-metadata a {
+  color: inherit;
+}
 
-.post-list {
+/* ---------------- Abstract ---------------- */
+
+.abstract {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1em 1.6em;
+  margin: 0 1.5em 2em;
+  font-size: 0.93em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.abstract p {
+  margin: 0 0 0.8em;
+}
+
+.abstract p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------------- Table of contents (built by blog.js) ---------------- */
+
+#TOC {
+  float: left;
+  max-width: 45%;
+  margin: 0 1.8em 1em 0;
+  padding: 0.7em 1.4em 0.8em 1.1em;
+  border: 1px solid var(--line);
+  background-color: var(--box-bg);
+  font-size: 0.82em;
+  line-height: 1.5;
+}
+
+#TOC .toc-title {
+  font-variant-caps: small-caps;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 0.4em;
+}
+
+#TOC ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  counter-reset: toc;
 }
 
-.post-list li {
-  margin-bottom: 2.2em;
+#TOC li {
+  counter-increment: toc;
+  margin: 0.15em 0;
 }
 
-.post-meta {
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.72rem;
+#TOC li::before {
+  content: counters(toc, ".") " ";
   color: var(--muted);
-  margin-bottom: 2px;
+  font-size: 0.9em;
+  margin-right: 0.35em;
 }
 
-.post-link {
-  font-size: 1.45rem;
-  font-weight: 600;
-  line-height: 1.3;
+#TOC ul ul {
+  margin-left: 1.2em;
+}
+
+#TOC a {
   color: var(--text);
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
-.post-link:hover {
-  color: var(--accent);
+#TOC a:hover {
+  text-decoration: underline;
 }
 
-/* ---------------- Post ---------------- */
+/* ---------------- Essay body ---------------- */
 
-.post-title {
-  font-size: 2.2rem;
+.essay-content {
+  position: relative;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.essay-content h1,
+.essay-content h2,
+.essay-content h3,
+.essay-content h4 {
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin: 40px 0 0;
+  line-height: 1.25;
+  text-align: left;
+  margin: 1.6em 0 0.5em;
+  clear: both;
 }
 
-.post > header .post-meta {
-  margin: 10px 0 0;
+.essay-content h1 {
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.15em;
 }
 
-.post-content {
-  margin-top: 36px;
+.essay-content h2 {
+  font-size: 1.25em;
+  border-bottom: 1px dotted var(--line);
+  padding-bottom: 0.1em;
 }
 
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4 {
-  font-weight: 600;
-  line-height: 1.3;
-  margin: 1.8em 0 0.5em;
+.essay-content h3 {
+  font-size: 1.1em;
 }
 
-.post-content p {
-  margin: 0 0 1.2em;
+.essay-content h4 {
+  font-size: 1em;
+  font-style: italic;
+}
+
+.essay-content p {
+  margin: 0 0 1em;
 }
 
 /* Drop cap on the opening paragraph */
-.post-content > p:first-of-type::first-letter {
-  font-size: 3.2em;
+body.essay .essay-content > p:first-of-type::first-letter {
+  font-size: 3.1em;
   font-weight: 600;
   float: left;
-  line-height: 0.82;
-  padding: 0.08em 0.14em 0 0;
-  color: var(--accent);
+  line-height: 0.85;
+  padding: 0.05em 0.1em 0 0;
 }
 
-.post-content a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid var(--line);
-  transition: color 0.2s ease, border-color 0.2s ease;
+/* ---------------- Links ---------------- */
+
+.essay-content a,
+.essay-abstract a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.15s ease;
 }
 
-.post-content a:hover {
-  color: var(--accent-strong);
-  border-bottom-color: var(--accent);
+.essay-content a:hover,
+.essay-abstract a:hover {
+  text-decoration-color: var(--text);
 }
 
-.post-content img {
+/* External links get a small marker */
+.essay-content a[href^="http"]::after {
+  content: "\202F\2197"; /* narrow space + ↗ */
+  font-size: 0.72em;
+  color: var(--muted);
+}
+
+/* ---------------- Figures, quotes, rules ---------------- */
+
+.essay-content img {
   max-width: 100%;
-  border-radius: 8px;
+  border: 1px solid var(--line-light);
 }
 
-.post-content figure {
-  margin: 2.2em 0;
+.essay-content figure {
+  margin: 1.8em 0;
 }
 
-.post-content figcaption {
-  margin-top: 10px;
+.essay-content figcaption {
+  margin-top: 8px;
   text-align: center;
-  font-style: italic;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--muted);
 }
 
 blockquote {
-  border: none;
-  text-align: center;
-  font-style: italic;
-  font-size: 1.1rem;
-  color: var(--muted);
-  padding: 0 2em;
-  margin: 2.2em 0;
-}
-
-blockquote::before {
-  content: "\2766"; /* ❦ fleuron */
-  display: block;
-  font-style: normal;
-  color: var(--accent);
-  margin-bottom: 0.5em;
+  margin: 1.4em 0;
+  padding: 0.1em 1.3em;
+  border-left: 3px solid var(--line);
+  color: var(--text);
+  font-size: 0.97em;
 }
 
 hr {
   border: none;
   text-align: center;
-  margin: 2.5em 0;
+  margin: 2.4em 0;
 }
 
 hr::after {
-  content: "\2766";
-  color: var(--accent);
+  content: "\2042"; /* ⁂ asterism */
+  color: var(--muted);
+  font-size: 0.9em;
 }
+
+/* ---------------- Code & tables ---------------- */
 
 pre,
 code {
-  font-size: 0.85em;
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.82em;
   background-color: var(--code-bg);
-  border: 1px solid var(--code-line);
-  border-radius: 5px;
+  border: 1px solid var(--line-light);
 }
 
 code {
-  padding: 0.1em 0.35em;
+  padding: 0.1em 0.3em;
 }
 
 pre {
-  padding: 0.9em 1.1em;
+  padding: 0.8em 1em;
   overflow-x: auto;
+  line-height: 1.45;
 }
 
 pre code {
@@ -301,74 +346,174 @@ pre code {
 table {
   border-collapse: collapse;
   margin: 1.5em 0;
+  font-size: 0.9em;
+}
+
+table th {
+  font-variant-caps: small-caps;
+  letter-spacing: 0.03em;
 }
 
 table th,
 table td {
   border: 1px solid var(--line);
-  padding: 0.4em 0.8em;
+  padding: 0.35em 0.7em;
 }
 
-/* ---------------- Reading progress bar ---------------- */
+/* ---------------- Footnotes & sidenotes ---------------- */
 
-#reading-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 0;
-  background: linear-gradient(90deg, #b08d5a, #8c5a2b);
-  z-index: 9999;
-  transition: width 0.08s linear;
+.footnotes {
+  margin-top: 3em;
+  border-top: 1px solid var(--line);
+  padding-top: 1em;
+  font-size: 0.85em;
+  clear: both;
+}
+
+sup[id^="fnref"] a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Sidenotes (blog.js moves footnotes into the margin when it fits) */
+.sidenote {
+  position: absolute;
+  left: calc(100% + 2.5em);
+  width: 15em;
+  font-size: 0.78em;
+  line-height: 1.45;
+  text-align: left;
+  hyphens: auto;
+  color: var(--text);
+}
+
+.sidenote .sidenote-number {
+  font-weight: 600;
+}
+
+.sidenote p {
+  display: inline;
+  margin: 0;
+}
+
+body.sidenotes-active .footnotes {
+  display: none;
+}
+
+/* ---------------- Index (essay list) ---------------- */
+
+.year-heading {
+  font-size: 1.05rem;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.2em;
+  margin: 2.2em 0 0.8em;
+}
+
+.essay-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.essay-list li {
+  margin-bottom: 0.9em;
+}
+
+.essay-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+
+.essay-link:hover {
+  text-decoration-color: var(--text);
+}
+
+.essay-date {
+  margin-left: 0.7em;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+}
+
+.essay-abstract {
+  margin: 0.15em 0 0;
+  font-size: 0.9em;
+  color: var(--muted);
 }
 
 /* ---------------- Theme toggle ---------------- */
 
 #theme-toggle {
   position: fixed;
-  top: 18px;
-  right: 18px;
+  top: 16px;
+  right: 16px;
   z-index: 1000;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border: 1px solid var(--line);
-  border-radius: 50%;
+  border-radius: 3px;
   background-color: var(--bg);
   cursor: pointer;
-  font-size: 19px;
+  font-size: 16px;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-  transition: transform 0.2s ease, background-color 0.4s ease, border-color 0.4s ease;
+  transition: border-color 0.2s ease, background-color 0.3s ease;
 }
 
 #theme-toggle:hover {
-  transform: scale(1.1) rotate(15deg);
+  border-color: var(--text);
 }
 
 #theme-toggle .toggle-icon::before {
-  content: "🌙";
+  content: "\263E"; /* ☾ */
+  color: var(--text);
 }
 
 html.dark #theme-toggle .toggle-icon::before {
-  content: "☀️";
+  content: "\2600"; /* ☀ */
 }
 
 /* ---------------- Responsive ---------------- */
 
 @media (max-width: 640px) {
-  body.reading {
+  body.gwern {
     font-size: 17px;
+    text-align: left;
   }
 
-  .blog-header h1 {
-    font-size: 2.1rem;
+  .essay-content,
+  .abstract {
+    text-align: left;
+  }
+
+  .abstract {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #TOC {
+    float: none;
+    max-width: none;
+    margin-right: 0;
+  }
+
+  .essay-title {
+    font-size: 1.7rem;
   }
 
   #theme-toggle {
     top: auto;
-    bottom: 18px;
+    bottom: 16px;
   }
 }

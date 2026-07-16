@@ -8,32 +8,46 @@
 {% seo %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ "/assets/css/blog.css?v=" | append: site.github.build_revision | relative_url }}">
   </head>
-  <body class="reading post">
+  <body class="gwern essay">
     {% include theme-toggle.html %}
 
-    <div class="reading-wrap">
-      <nav class="reading-nav">
-        <a href="{{ "/blog/" | relative_url }}">← Thoughts</a>
+    <div class="essay-wrap">
+      <nav class="top-nav">
+        <a href="{{ "/" | relative_url }}">Wajahat Ali Khan</a>
+        <span class="sep">/</span>
+        <a href="{{ "/blog/" | relative_url }}">Thoughts</a>
       </nav>
 
-      <article class="post">
-        <header>
-          <h1 class="post-title">{{ page.title }}</h1>
-          <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+      <article>
+        <header class="essay-header">
+          <h1 class="essay-title">{{ page.title }}</h1>
+          <div class="page-metadata">
+            <span class="page-date">{{ page.date | date: "%Y-%m-%d" }}{% if page.modified %}–{{ page.modified | date: "%Y-%m-%d" }}{% endif %}</span>
+            {%- if page.status %} · <span class="page-status">{{ page.status }}</span>{% endif %}
+            {%- if page.confidence %} · <span class="page-confidence">certainty: {{ page.confidence }}</span>{% endif %}
+            {%- if page.importance %} · <span class="page-importance">importance: {{ page.importance }}</span>{% endif %}
+          </div>
         </header>
 
-        <div class="post-content">
+        {% if page.abstract %}
+        <div class="abstract">
+          <p>{{ page.abstract }}</p>
+        </div>
+        {% endif %}
+
+        <div id="markdownBody" class="essay-content">
           {{ content }}
         </div>
       </article>
 
-      <nav class="post-footer">
-        <a href="{{ "/blog/" | relative_url }}">← All posts</a> · <a href="{{ "/" | relative_url }}">Home</a>
+      <nav class="essay-footer">
+        <a href="{{ "/blog/" | relative_url }}">← All essays</a> · <a href="{{ "/" | relative_url }}">Home</a>
       </nav>
     </div>
     <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/blog.js" | relative_url }}"></script>
   </body>
 </html>

@@ -1,6 +1,7 @@
 ---
 title: "Do Machines have feelings?"
 date: 2025-06-16
+status: finished
 ---
 If you ask a person, the higher chance is that they will say "No", that Machines don't have feelings, or in this case AI.
 But I beg to differ, I think AI has feelings or it would be more correct to say that AI can develop feelings.

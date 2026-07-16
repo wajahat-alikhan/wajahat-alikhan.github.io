@@ -8,34 +8,42 @@
 {% seo %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ "/assets/css/blog.css?v=" | append: site.github.build_revision | relative_url }}">
   </head>
-  <body class="reading">
+  <body class="gwern index">
     {% include theme-toggle.html %}
 
-    <div class="reading-wrap">
-      <nav class="reading-nav">
-        <a href="{{ "/" | relative_url }}">← Wajahat Ali Khan</a>
+    <div class="essay-wrap">
+      <nav class="top-nav">
+        <a href="{{ "/" | relative_url }}">Wajahat Ali Khan</a>
       </nav>
 
-      <header class="blog-header">
-        <h1>Thoughts</h1>
-        <p class="blog-tagline">A researcher's musings</p>
+      <header class="essay-header">
+        <h1 class="essay-title">{{ page.title }}</h1>
+        <div class="page-metadata">{{ page.description }} · {{ site.posts | size }} essays</div>
       </header>
 
       {{ content }}
 
-      <ul class="post-list">
-        {% for post in site.posts %}
-        <li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
+      {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+      {% for year in posts_by_year %}
+      <section class="year-group">
+        <h2 class="year-heading">{{ year.name }}</h2>
+        <ul class="essay-list">
+          {% for post in year.items %}
+          <li>
+            <a class="essay-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="essay-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+            {% if post.abstract %}<p class="essay-abstract">{{ post.abstract }}</p>
+            {% elsif post.description %}<p class="essay-abstract">{{ post.description }}</p>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endfor %}
 
-      <nav class="post-footer">
+      <nav class="essay-footer">
         <a href="{{ "/" | relative_url }}">← Home</a>
       </nav>
     </div>

@@ -2,6 +2,7 @@
 layout: post
 title: "How to read a research paper"
 date: 2025-01-22
+status: finished
 ---
  
 
