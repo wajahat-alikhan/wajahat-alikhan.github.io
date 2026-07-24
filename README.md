@@ -1,7 +1,7 @@
 
 👋 <span id="typewriter">Hello, 안녕하세요, السلام علیکم</span>
 
-I am Wajahat Ali Khan (وجاہت علی خان), born and raised in Peshawar.
+I am Wajahat Ali Khan (وجاہت علی خان) [pronounced as wuh-JAH-haht] born and raised in Peshawar, Pakistan.
 
 I completed my B.Sc. in Electrical Engineering (Communication) from UET, where I also did my initial internships and training at various research centers, including the National Center of Artificial Intelligence (NCAI) and the National Center of Cyber Security (NCCS).
 
