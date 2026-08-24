@@ -2,81 +2,18 @@
 ---
 
 /* ================================================================
-   Beyond Research — each subsection is its own world:
-   hub          neutral foyer with four doors, each in its room's style
-   photography  dark gallery, Space Grotesk, grayscale→color photos
-   books        parchment & ink, EB Garamond, drop cap, slow fades
-   anime        cinema dark, Bebas Neue, crimson accent, slide-ins
-   art          white gallery, DM Serif Display, painted underline
+   Beyond — one quiet page.
+   A warm near-white ground under a faint paper grain; editorial
+   Fraunces headings over a monospace register; everything on a
+   single scroll, curated and calm. Grows as more is added.
    ================================================================ */
 
-/* ---------------- World transitions (View Transitions API) ----------------
-   The incoming page's CSS drives the animation; older browsers just
-   navigate instantly. Entering Beyond = the lights dim. */
-
-@view-transition {
-  navigation: auto;
-}
-
-@keyframes vt-fade-out {
-  to { opacity: 0; }
-}
-
-@keyframes vt-fade-in {
-  from { opacity: 0; }
-}
-
-@keyframes vt-rise {
-  from { opacity: 0; transform: translateY(26px); }
-}
-
-@keyframes vt-letterbox {
-  from { clip-path: inset(50% 0); }
-  to { clip-path: inset(0 0); }
-}
-
-/* Default for Beyond rooms: fade through black */
-::view-transition {
-  background-color: #0e0e0e;
-}
-
-::view-transition-old(root) {
-  animation: vt-fade-out 0.22s ease both;
-}
-
-::view-transition-new(root) {
-  animation: vt-fade-in 0.4s ease 0.16s both;
-}
-
-/* Books: fade through parchment instead */
-html:has(body.vibe-books)::view-transition { background-color: #f3e7cd; }
-html.dark:has(body.vibe-books)::view-transition { background-color: #241a0e; }
-
-/* Art: fade through gallery white */
-html:has(body.vibe-art)::view-transition { background-color: #ffffff; }
-html.dark:has(body.vibe-art)::view-transition { background-color: #221c2b; }
-
-/* Cinema: fade through the navy dark of the theater */
-html:has(body.vibe-anime)::view-transition { background-color: #0e1420; }
-
-/* Photography: a quick shutter cut */
-html:has(body.vibe-photography)::view-transition-old(root) { animation-duration: 0.1s; }
-html:has(body.vibe-photography)::view-transition-new(root) { animation-duration: 0.16s; animation-delay: 0.08s; }
-
-/* Cinema: the letterbox opens from the middle */
-html:has(body.vibe-anime)::view-transition-new(root) {
-  animation: vt-letterbox 0.55s cubic-bezier(0.2, 0.8, 0.25, 1) 0.15s both;
-}
-
-/* Entry pages: drilling into content slides it up */
-html:has(body.entry)::view-transition-new(root) {
-  animation: vt-rise 0.35s ease 0.1s both;
-}
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation-duration: 0.18s; }
+::view-transition-new(root) { animation-duration: 0.25s; }
 
 @media (prefers-reduced-motion: reduce) {
-  @view-transition {
-    navigation: none;
-  }
+  @view-transition { navigation: none; }
   ::view-transition-old(root),
   ::view-transition-new(root) {
     animation-duration: 0s !important;
@@ -84,192 +21,401 @@ html:has(body.entry)::view-transition-new(root) {
   }
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body.beyond {
+  /* light mode: airy, low-saturation indigo-blue */
+  --bg: #f4f6fc;
+  --text: #262a3a;
+  --muted: #767c9c;
+  --accent: #4e63e6;
+  --line: #e0e4f2;
+  --rule: #ccd2ea; /* dashed technical rules */
+  --dot: rgba(78, 99, 230, 0.09); /* dot-grid ground */
+
+  --head-font: "Fraunces", Georgia, serif;
+  --body-font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, monospace;
+  --hand-font: "Caveat", "Segoe Print", cursive;
+  --print: #fdfdfb; /* photo-print white, same in both themes */
+  --ink: #2b2f45;   /* blue-black handwritten ink */
+
   margin: 0;
-  background-color: var(--bg);
   color: var(--text);
   font-family: var(--body-font);
   font-size: 16.5px;
   line-height: 1.8;
-  transition: background-color 0.4s ease, color 0.4s ease;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s ease, color 0.4s ease;
+
+  /* dot-grid ground */
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.6px);
+  background-size: 22px 22px;
+  background-position: -11px -11px;
+}
+
+html.dark body.beyond {
+  /* dark mode: a different tone — soft violet / lavender */
+  --bg: #1c1830;
+  --text: #ece8f6;
+  --muted: #9992b6;
+  --accent: #ab9bf5;
+  --line: #2f2942;
+  --rule: #40395c;
+  --dot: rgba(171, 155, 245, 0.10);
+}
+
+/* faint paper grain over everything, clicks pass through */
+body.beyond::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='140'%20height='140'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.8'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+}
+
+html.dark body.beyond::after {
+  mix-blend-mode: screen;
+  opacity: 0.04;
 }
 
 .beyond-wrap {
-  max-width: 760px;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 36px 28px 72px;
+  padding: 40px 28px 96px;
 }
 
-/* ---------------- Shared: top nav ---------------- */
+/* ---------------- Top nav ---------------- */
 
 .beyond-nav {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 52px;
+  gap: 14px 22px;
+  padding-bottom: 18px;
+  margin-bottom: 40px;
+  border-bottom: 1px dashed var(--rule);
 }
 
 .back-home {
-  font-family: var(--head-font);
-  font-size: 1.05rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
   color: var(--text);
   text-decoration: none;
 }
 
-.back-home:hover {
-  color: var(--accent);
-}
+.back-home:hover { color: var(--accent); }
 
-.topic-pills {
+.jump {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 16px;
 }
 
-.pill {
-  font-family: var(--body-font);
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 4px 13px;
-  border-radius: 999px;
+.jump a {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
   color: var(--muted);
-  border: 1px solid var(--line);
-  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.pill:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
+.jump a:hover { color: var(--accent); }
 
-/* ---------------- Shared: content basics ---------------- */
+/* ---------------- Headings & type ---------------- */
+
+.beyond-content { counter-reset: sec; }
 
 .beyond-content h1 {
   font-family: var(--head-font);
+  font-weight: 400;
+  font-size: clamp(2.8rem, 9vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   margin: 0 0 0.5em;
 }
 
+.beyond-content h1 + p {
+  font-size: 1.08rem;
+  color: var(--muted);
+  max-width: 34em;
+  margin: 0 0 1em;
+}
+
 .beyond-content h2 {
+  counter-increment: sec;
   font-family: var(--head-font);
-  margin: 2.2em 0 0.6em;
+  font-weight: 400;
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 3.4em 0 0.7em;
+  padding-top: 2.2em;
+  border-top: 1px dashed var(--rule);
+  scroll-margin-top: 24px;
+}
+
+/* small mono index above each section */
+.beyond-content h2::before {
+  content: counter(sec, decimal-leading-zero);
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  color: var(--muted);
+  margin-bottom: 0.9em;
 }
 
 .beyond-content a {
   color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px dashed transparent;
   transition: border-color 0.2s ease;
 }
 
-.beyond-content a:hover {
-  border-bottom-color: var(--accent);
-}
+.beyond-content a:hover { border-bottom-color: var(--accent); }
+
+/* ---------------- Reading list ---------------- */
 
 .beyond-content ul {
-  padding-left: 1.2em;
+  list-style: none;
+  padding-left: 0;
+  margin: 1.2em 0 0;
 }
 
-.beyond-content li {
-  margin: 0.5em 0;
+.beyond-content ul li {
+  margin: 0.55em 0;
+  padding-left: 1.1em;
+  position: relative;
 }
 
-.beyond-content li::marker {
+.beyond-content ul li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
   color: var(--accent);
+  font-weight: 700;
 }
+
+.beyond-content ul li em { font-style: italic; }
+
+.note {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-left: 0.4em;
+}
+
+/* ---------------- Watching lines ---------------- */
+
+.line {
+  margin: 0.4em 0;
+  color: var(--text);
+}
+
+.line-label {
+  display: inline-block;
+  width: 4.5em;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.now-showing {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0 0 1.4em;
+}
+
+.now-showing::before {
+  content: "\25CF";
+  color: var(--accent);
+  margin-right: 8px;
+  font-size: 0.6rem;
+  vertical-align: 1px;
+  animation: rec-blink 2.2s ease infinite;
+}
+
+@keyframes rec-blink { 50% { opacity: 0.25; } }
+
+/* ---------------- Instagram link ---------------- */
+
+.ig-link {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  border: 1px dashed var(--rule);
+  border-radius: 6px;
+  padding: 7px 14px;
+  transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.ig-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ---------------- Photography: a taped-down memory board ---------------- */
+
+.memory-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 34px;
+  margin: 2.4em 0 0.6em;
+  padding: 40px 26px;
+  border: 1px dashed var(--rule);
+  border-radius: 8px;
+  /* a dotted board surface behind the pinned prints */
+  background-image: radial-gradient(var(--rule) 1px, transparent 1.5px);
+  background-size: 15px 15px;
+}
+
+.memory-board figure {
+  margin: 0;
+  width: clamp(150px, 44%, 215px);
+  padding: 10px 10px 6px;
+  background: var(--print);
+  border-radius: 2px;
+  box-shadow: 0 7px 20px rgba(38, 32, 24, 0.20);
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.25, 1), box-shadow 0.35s ease;
+}
+
+/* a strip of translucent tape across the top */
+.memory-board figure::before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  width: 66px;
+  height: 23px;
+  transform: translateX(-50%) rotate(-4deg);
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.55), rgba(210, 218, 240, 0.32));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.memory-board a { display: block; border-bottom: none; }
+
+.memory-board img {
+  display: block;
+  width: 100%;
+  height: 178px;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
+.memory-board figcaption {
+  margin-top: 9px;
+  font-family: var(--hand-font);
+  font-size: 1.2rem;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--ink);
+}
+
+/* each print pinned at its own slight angle; straighten on hover */
+.memory-board figure:nth-child(4n+1) { transform: rotate(-2.6deg); }
+.memory-board figure:nth-child(4n+2) { transform: rotate(1.9deg); }
+.memory-board figure:nth-child(4n+3) { transform: rotate(-1deg); }
+.memory-board figure:nth-child(4n+4) { transform: rotate(2.5deg); }
+
+.memory-board figure:hover {
+  transform: rotate(0deg) translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 34px rgba(38, 32, 24, 0.28);
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .memory-board figure { transform: none !important; }
+}
+
+/* ---------------- Art: prints in a quiet grid ---------------- */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 22px 16px;
+  margin: 1.8em 0 0;
+}
+
+.photo-grid figure { margin: 0; }
+
+.photo-grid a { display: block; border-bottom: none; }
+
+.photo-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  background: var(--print);
+  padding: 6px;
+  border-radius: 2px;
+  box-shadow: 0 5px 14px rgba(38, 32, 24, 0.16);
+  transition: transform 0.4s ease;
+}
+
+.photo-grid figure:hover img { transform: translateY(-4px); }
+
+.photo-grid figcaption {
+  margin-top: 9px;
+  line-height: 1.4;
+}
+
+.photo-grid figcaption strong {
+  display: block;
+  font-family: var(--head-font);
+  font-weight: 500;
+  font-size: 0.84rem;
+  color: var(--text);
+  margin-bottom: 1px;
+}
+
+.photo-grid.art-grid figcaption {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+/* ---------------- Quote ---------------- */
 
 .beyond-content blockquote {
-  margin: 2.6em 0;
-  padding: 0 0 0 1.5em;
-  border-left: 3px solid var(--accent);
+  margin: 3.4em 0 2.4em;
+  padding: 2.4em 0 0 1.4em;
+  border-top: 1px dashed var(--rule);
+  border-left: 2px dashed var(--accent);
 }
 
 .beyond-content blockquote p {
   font-family: var(--head-font);
   font-style: italic;
-  font-size: 1.12rem;
+  font-size: 1.2rem;
   color: var(--muted);
   margin: 0;
 }
 
-.beyond-content img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-
-/* Any image on any page can carry a caption: wrap it in
-   <figure> ... <figcaption>your caption</figcaption> </figure> */
-.beyond-content figure {
-  margin: 2.2em 0;
-}
-
-.beyond-content figcaption {
-  margin-top: 10px;
-  font-size: 0.85rem;
-  line-height: 1.7;
-  color: var(--muted);
-}
-
-/* ---------------- Shared: photo grid ---------------- */
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 14px;
-  margin: 26px 0;
-}
-
-.photo-grid a {
-  border-bottom: none;
-  display: block;
-  overflow: hidden;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.photo-grid a:hover {
-  transform: translateY(-5px);
-}
-
-.photo-grid img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  border-radius: 8px;
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.photo-grid a:hover img {
-  transform: scale(1.06);
-}
-
-.photo-grid figure {
-  margin: 0;
-}
-
-.photo-grid figcaption {
-  margin-top: 8px;
-  font-size: 0.78rem;
-  color: var(--muted);
-}
-
-.vibe-photography .photo-grid figcaption {
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  text-transform: lowercase;
-}
-
-/* ---------------- Shared: theme toggle ---------------- */
+/* ---------------- Theme toggle ---------------- */
 
 #theme-toggle {
   position: fixed;
@@ -287,819 +433,32 @@ body.beyond {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   transition: transform 0.2s ease, background-color 0.4s ease, border-color 0.4s ease;
 }
 
-#theme-toggle:hover {
-  transform: scale(1.1) rotate(15deg);
-}
+#theme-toggle:hover { transform: scale(1.1) rotate(15deg); border-color: var(--accent); }
+#theme-toggle .toggle-icon::before { content: "🌙"; }
+html.dark #theme-toggle .toggle-icon::before { content: "☀️"; }
 
-#theme-toggle .toggle-icon::before {
-  content: "🌙";
-}
-
-html.dark #theme-toggle .toggle-icon::before {
-  content: "☀️";
-}
-
-/* ---------------- Shared: scroll reveal ---------------- */
+/* ---------------- Scroll reveal ---------------- */
 
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .beyond-content h1,
-  .beyond-content h1::after {
-    animation: none !important;
-  }
-}
-
-/* ================================================================
-   HUB — a neutral foyer; each door card wears its room's style
-   ================================================================ */
-
-body.vibe-hub {
-  --bg: #f1ece1;
-  --text: #26221c;
-  --muted: #7d766b;
-  --accent: #8a6d4e;
-  --line: #ded6c6;
-  --head-font: "Fraunces", Georgia, serif;
-  --body-font: "Inter", -apple-system, sans-serif;
-}
-
-html.dark body.vibe-hub {
-  --bg: #191613;
-  --text: #e8e2d7;
-  --muted: #97907f;
-  --accent: #c8a878;
-  --line: #2f2a22;
-}
-
-.vibe-hub .beyond-content h1 {
-  font-size: clamp(2.4rem, 6vw, 3.2rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.doors {
-  list-style: none;
-  padding: 0;
-  margin: 2.4em 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.doors li {
-  margin: 0;
-}
-
-.doors a {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-  padding: 30px 34px;
-  border-radius: 16px;
-  border-bottom: none;
-  text-decoration: none;
-  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.25, 1), box-shadow 0.3s ease;
-}
-
-.doors a:hover {
-  transform: translateX(12px);
-}
-
-.door-num {
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.78rem;
-  opacity: 0.55;
-}
-
-.door-body {
-  display: block;
-}
-
-.door-title {
-  display: block;
-  line-height: 1.15;
-}
-
-.door-desc {
-  display: block;
-  font-size: 0.88rem;
-  opacity: 0.72;
-  margin-top: 4px;
-  font-family: "Inter", -apple-system, sans-serif;
-}
-
-.door-arrow {
-  margin-left: auto;
-  font-size: 1.5rem;
-  opacity: 0.6;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.doors a:hover .door-arrow {
-  transform: translateX(8px);
-  opacity: 1;
-}
-
-/* Door 1 — Photography: the dark gallery */
-.door-photo a {
-  background: #0f0f0f;
-  color: #ececec;
-  border: 1px solid #262626;
-}
-.door-photo .door-title {
-  font-family: "Space Grotesk", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 1.15rem;
-  font-weight: 500;
-}
-.door-photo a:hover {
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
-  border-color: #4a4a4a;
-}
-
-/* Door 2 — Books: parchment & ink */
-.door-books a {
-  background: #f2e8d5;
-  color: #43351f;
-  border: 1px solid #ddcdb0;
-}
-.door-books .door-title {
-  font-family: "EB Garamond", Georgia, serif;
-  font-style: italic;
-  font-weight: 600;
-  font-size: 1.75rem;
-}
-.door-books a:hover {
-  box-shadow: 0 14px 34px rgba(138, 90, 43, 0.3);
-}
-
-/* Door 3 — Anime & Films: the cinema */
-.door-anime a {
-  background: #101014;
-  color: #ecebf2;
-  border: 1px solid #26262f;
-  border-top: 5px solid #000000;
-  border-bottom: 5px solid #000000;
-}
-.door-anime .door-title {
-  font-family: "Bebas Neue", sans-serif;
-  letter-spacing: 0.07em;
-  font-size: 2rem;
-  color: #ff4d5e;
-}
-.door-anime a:hover {
-  box-shadow: 0 14px 34px rgba(255, 77, 94, 0.28);
-}
-
-/* Door 4 — Art: the white gallery */
-.door-art a {
-  background: #ffffff;
-  color: #26222b;
-  border: 2px solid transparent;
-  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(120deg, #2f86c9, #7c5cff, #d94f70, #d98e04);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-}
-.door-art .door-title {
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: 1.75rem;
-}
-.door-art a:hover {
-  box-shadow: 0 14px 34px rgba(124, 92, 255, 0.25);
-}
-
-html.dark .door-art a {
-  background-image: linear-gradient(#1f1d24, #1f1d24), linear-gradient(120deg, #5cabe8, #a48cff, #f4728f, #f0b32e);
-  color: #ece8f2;
-}
-
-@media (max-width: 560px) {
-  .doors a {
-    gap: 16px;
-    padding: 22px 20px;
-  }
-  .door-arrow {
-    display: none;
-  }
-}
-
-/* ================================================================
-   PHOTOGRAPHY — a photo gallery: white walls by day, dark by night;
-   photos are the color either way
-   ================================================================ */
-
-body.vibe-photography {
-  --bg: #e9e9e6;
-  --text: #1c1c1c;
-  --muted: #6b6b68;
-  --accent: #000000;
-  --line: #d2d2cd;
-  --head-font: "Space Grotesk", sans-serif;
-  --body-font: "Inter", -apple-system, sans-serif;
-}
-
-html.dark body.vibe-photography {
-  --bg: #0a0a0a;
-  --text: #e6e6e6;
-  --muted: #9a9a9a;
-  --accent: #ffffff;
-  --line: #2a2a2a;
-}
-
-.vibe-photography .beyond-content h1 {
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-  font-weight: 500;
-  text-transform: uppercase;
-  animation: tracking-in 1.1s ease both;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 0.5em;
-}
-
-@keyframes tracking-in {
-  from { letter-spacing: 0.02em; opacity: 0; }
-  to   { letter-spacing: 0.24em; opacity: 1; }
-}
-
-.vibe-photography .photo-grid {
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-}
-
-.vibe-photography .photo-grid img {
-  height: 220px;
-  border-radius: 4px;
-  filter: grayscale(55%) contrast(1.02);
-}
-
-.vibe-photography .photo-grid a {
-  border-radius: 4px;
-}
-
-.vibe-photography .photo-grid a:hover img {
-  filter: grayscale(0%);
-}
-
-/* Photos develop in like prints: overexposed → true */
-.vibe-photography .photo-grid figure.reveal {
-  transform: none;
-  filter: brightness(1.7) contrast(0.85);
-  transition: opacity 0.7s ease, filter 1s ease;
-}
-
-.vibe-photography .photo-grid figure.reveal.visible {
-  filter: brightness(1) contrast(1);
-}
-
-.vibe-photography .beyond-content blockquote {
-  border-left: 1px solid var(--muted);
-}
-
-/* ================================================================
-   BOOKS — parchment by day, leather-bound night; EB Garamond
-   ================================================================ */
-
-body.vibe-books {
-  --bg: #f3e7cd;
-  --text: #3d3122;
-  --muted: #7d6b52;
-  --accent: #8a5a2b;
-  --line: #dfcda5;
-  --head-font: "EB Garamond", Georgia, serif;
-  --body-font: "EB Garamond", Georgia, serif;
-}
-
-html.dark body.vibe-books {
-  --bg: #241a0e;
-  --text: #e7dac1;
-  --muted: #a8946f;
-  --accent: #cfa165;
-  --line: #3d3019;
-}
-
-body.vibe-books {
-  font-size: 19px;
-  line-height: 1.85;
-}
-
-.vibe-books .beyond-content h1 {
-  font-size: clamp(2.5rem, 6vw, 3.4rem);
-  font-weight: 600;
-  line-height: 1.1;
-  animation: settle 1.4s ease both;
-}
-
-@keyframes settle {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: none; }
-}
-
-/* Drop cap on the opening paragraph */
-.vibe-books .beyond-content h1 + p::first-letter {
-  font-size: 3.1em;
-  font-weight: 600;
-  float: left;
-  line-height: 0.85;
-  padding: 0.08em 0.12em 0 0;
-  color: var(--accent);
-}
-
-.vibe-books .beyond-content blockquote {
-  border: none;
-  padding: 0 2em;
-  text-align: center;
-}
-
-.vibe-books .beyond-content blockquote p {
-  font-size: 1.3rem;
-}
-
-.vibe-books .beyond-content blockquote::before {
-  content: "❦";
-  display: block;
-  color: var(--accent);
-  font-size: 1.1rem;
-  margin-bottom: 0.6em;
-}
-
-.vibe-books .reveal {
-  transition-duration: 1s;
-}
-
-/* ================================================================
-   ANIME & FILMS — a dark cinema; Bebas Neue, crimson accent
-   ================================================================ */
-
-body.vibe-anime {
-  --bg: #e7ecf4;
-  --text: #1a2030;
-  --muted: #66708a;
-  --accent: #d92b41;
-  --line: #d0d9e8;
-  --head-font: "Bebas Neue", sans-serif;
-  --body-font: "Inter", -apple-system, sans-serif;
-}
-
-html.dark body.vibe-anime {
-  --bg: #0e1420;
-  --text: #e9edf5;
-  --muted: #8792ab;
-  --accent: #ff4d5e;
-  --line: #222d42;
-}
-
-.vibe-anime .beyond-content h1 {
-  font-size: clamp(3rem, 9vw, 4.6rem);
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  animation: marquee-in 0.7s cubic-bezier(0.2, 0.8, 0.25, 1) both;
-}
-
-@keyframes marquee-in {
-  from { opacity: 0; transform: translateX(-40px) skewX(-6deg); }
-  to   { opacity: 1; transform: none; }
-}
-
-.vibe-anime .beyond-content h1::after {
-  content: "";
-  display: block;
-  width: 72px;
-  height: 5px;
-  background: var(--accent);
-  margin-top: 10px;
-  animation: bar-grow 0.9s 0.3s ease both;
-}
-
-@keyframes bar-grow {
-  from { width: 0; }
-  to   { width: 72px; }
-}
-
-.vibe-anime .beyond-content h2 {
-  letter-spacing: 0.05em;
-  font-size: 1.9rem;
-  font-weight: 400;
-}
-
-.vibe-anime .beyond-content li::marker {
-  content: "▸ ";
-}
-
-/* Quote styled like a subtitle at the bottom of a frame */
-.vibe-anime .beyond-content blockquote {
-  border: none;
-  background: #000000;
-  border-radius: 6px;
-  padding: 1.1em 1.6em;
-  text-align: center;
-}
-
-.vibe-anime .beyond-content blockquote p {
-  font-family: var(--body-font);
-  font-style: normal;
-  color: #f5f3e8;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-}
-
-/* ================================================================
-   ART — white gallery walls, DM Serif Display, painted underline
-   ================================================================ */
-
-body.vibe-art {
-  --bg: #ffffff;
-  --text: #26222b;
-  --muted: #766f80;
-  --accent: #7c5cff;
-  --line: #eae7ef;
-  --head-font: "DM Serif Display", Georgia, serif;
-  --body-font: "Inter", -apple-system, sans-serif;
-}
-
-html.dark body.vibe-art {
-  --bg: #221c2b;
-  --text: #ece8f2;
-  --muted: #a49bb5;
-  --accent: #a48cff;
-  --line: #3a3149;
-}
-
-.vibe-art .beyond-content h1 {
-  font-size: clamp(2.6rem, 7vw, 3.6rem);
-  font-weight: 400;
-  line-height: 1.1;
-  position: relative;
-  display: inline-block;
-}
-
-.vibe-art .beyond-content h1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0.02em;
-  height: 0.22em;
-  width: 100%;
-  background: linear-gradient(90deg, #2f86c9, #7c5cff, #d94f70, #d98e04);
-  border-radius: 3px;
-  opacity: 0.55;
-  z-index: -1;
-  transform-origin: left;
-  animation: paint-stroke 1s 0.2s cubic-bezier(0.6, 0, 0.3, 1) both;
-}
-
-@keyframes paint-stroke {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-
-.vibe-art .beyond-content li:nth-child(4n+1)::marker { color: #2f86c9; }
-.vibe-art .beyond-content li:nth-child(4n+2)::marker { color: #d98e04; }
-.vibe-art .beyond-content li:nth-child(4n+3)::marker { color: #d94f70; }
-.vibe-art .beyond-content li:nth-child(4n+4)::marker { color: #7c5cff; }
-
-.vibe-art .beyond-content blockquote {
-  border-left: none;
-  padding: 1.2em 1.6em;
-  border-radius: 12px;
-  background:
-    linear-gradient(var(--bg), var(--bg)) padding-box,
-    linear-gradient(120deg, #2f86c9, #7c5cff, #d94f70, #d98e04) border-box;
-  border: 2px solid transparent;
-}
-
-/* ================================================================
-   ENTRIES — each section is a folder of .md files, like blog posts.
-   Shared skeleton here; each vibe styles its list its own way.
-   ================================================================ */
-
-.entry-list {
-  list-style: none;
-  padding: 0;
-  margin: 1.4em 0 2em;
-}
-
-.entry-list li {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6em;
-  margin: 0.7em 0;
-}
-
-.entry-list a {
-  border-bottom: none;
-  color: var(--text);
-}
-
-.entry-list a:hover {
-  color: var(--accent);
-}
-
-.entry-list .leader {
-  flex: 1;
-}
-
-.entry-date {
-  color: var(--muted);
-  font-size: 0.78rem;
-  white-space: nowrap;
-}
-
-.entry-meta {
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin: -0.6em 0 2em;
-}
-
-.entry-back {
-  margin-top: 3em;
-  padding-top: 1.2em;
-  border-top: 1px solid var(--line);
-}
-
-/* --- Photography: a numbered contact sheet, monospace metadata --- */
-
-.vibe-photography .beyond-wrap {
-  max-width: 880px;
-}
-
-.vibe-photography .entry-list {
-  counter-reset: series;
-}
-
-.vibe-photography .entry-list li {
-  counter-increment: series;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 0.7em;
-}
-
-.vibe-photography .entry-list li::before {
-  content: counter(series, decimal-leading-zero);
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.78rem;
-  color: var(--muted);
-}
-
-.vibe-photography .entry-list a {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.9rem;
-}
-
-.vibe-photography .entry-date,
-.vibe-photography .entry-meta {
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-}
-
-/* --- Books: a table of contents with dotted leaders --- */
-
-.vibe-books .beyond-wrap {
-  max-width: 660px;
-}
-
-.vibe-books .beyond-content h1 {
-  text-align: center;
-}
-
-.vibe-books .beyond-content h1::after {
-  content: "";
-  display: block;
-  width: 130px;
-  margin: 0.35em auto 0;
-  border-top: 4px double var(--accent);
-}
-
-.vibe-books .beyond-content h1 + p {
-  text-align: left;
-}
-
-.vibe-books .entry-list .leader {
-  border-bottom: 2px dotted var(--line);
-  transform: translateY(-4px);
-}
-
-.vibe-books .entry-list a {
-  font-style: italic;
-  font-size: 1.15rem;
-}
-
-.vibe-books .entry-date,
-.vibe-books .entry-meta {
-  font-variant: small-caps;
-  letter-spacing: 0.08em;
-}
-
-/* --- Anime & Films: a screening log with episode numbers --- */
-
-body.vibe-anime {
-  border-top: 7px solid #000;
-  border-bottom: 7px solid #000;
-  min-height: 100vh;
-}
-
-.vibe-anime .beyond-content h1::before {
-  content: "アニメ・映画";
-  display: block;
-  font-family: var(--body-font);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.4em;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-
-.vibe-anime .entry-list {
-  counter-reset: ep;
-}
-
-.vibe-anime .entry-list li {
-  counter-increment: ep;
-}
-
-.vibe-anime .entry-list li::before {
-  content: "EP." counter(ep, decimal-leading-zero);
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.vibe-anime .entry-list a {
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  font-size: 0.92rem;
-}
-
-.vibe-anime .entry-list .leader {
-  border-bottom: 1px solid var(--line);
-  transform: translateY(-4px);
-}
-
-.vibe-anime .entry-meta {
-  color: var(--accent);
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-}
-
-/* --- Art: entries as scattered gallery labels --- */
-
-body.vibe-art {
-  background-image:
-    radial-gradient(ellipse 45% 30% at 8% 4%, rgba(124, 92, 255, 0.09), transparent),
-    radial-gradient(ellipse 40% 28% at 94% 12%, rgba(217, 79, 112, 0.08), transparent),
-    radial-gradient(ellipse 50% 30% at 50% 100%, rgba(217, 142, 4, 0.07), transparent);
-  background-repeat: no-repeat;
-}
-
-.vibe-art .entry-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.vibe-art .entry-list li {
-  display: block;
-  margin: 0;
-  padding: 12px 18px;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background-color: var(--bg);
-  box-shadow: 3px 3px 0 var(--line);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.vibe-art .entry-list li:nth-child(3n+1) { transform: rotate(-1.2deg); }
-.vibe-art .entry-list li:nth-child(3n+2) { transform: rotate(0.8deg); }
-.vibe-art .entry-list li:nth-child(3n+3) { transform: rotate(-0.5deg); }
-
-.vibe-art .entry-list li:hover {
-  transform: rotate(0deg) translateY(-3px);
-  box-shadow: 4px 6px 0 var(--accent);
-}
-
-.vibe-art .entry-list a {
-  font-family: var(--head-font);
-  font-size: 1.05rem;
-}
-
-.vibe-art .entry-list .entry-date {
-  display: block;
-  margin-top: 2px;
-}
-
-/* --- Photography: Instagram link --- */
-
-.vibe-photography .ig-link {
-  display: inline-block;
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text);
-  border: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 9px 16px;
-  transition: border-color 0.25s ease, transform 0.25s ease;
-}
-
-.vibe-photography .ig-link:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* --- Anime: "now watching" marquee light --- */
-
-.now-showing {
-  display: inline-block;
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-}
-
-.now-showing::before {
-  content: "●";
-  color: var(--accent);
-  margin-right: 9px;
-  font-size: 0.6rem;
-  vertical-align: 1px;
-  animation: rec-blink 2.2s ease infinite;
-}
-
-@keyframes rec-blink {
-  50% { opacity: 0.25; }
-}
-
-/* --- Art: framed paintings --- */
-
-.vibe-art .painting {
-  margin: 3em 0;
-}
-
-.vibe-art .painting img {
-  display: block;
-  width: 100%;
-  border-radius: 2px;
-  border: 12px solid #ffffff;
-  outline: 1px solid var(--line);
-  box-shadow: 0 10px 30px rgba(40, 30, 70, 0.18);
-}
-
-html.dark .vibe-art .painting img {
-  border-color: #2a2731;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.vibe-art .painting figcaption {
-  margin-top: 14px;
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: var(--muted);
-  padding-left: 14px;
-  border-left: 3px solid var(--line);
-}
-
-.vibe-art .painting figcaption strong {
-  font-family: var(--head-font);
-  font-weight: 400;
-  font-size: 1.05rem;
-  color: var(--text);
+  .reveal { opacity: 1; transform: none; transition: none; }
 }
 
 /* ---------------- Responsive ---------------- */
 
 @media (max-width: 640px) {
-  .beyond-wrap {
-    padding: 28px 20px 56px;
-  }
-
-  .beyond-nav {
-    margin-bottom: 36px;
-  }
-
-  #theme-toggle {
-    top: auto;
-    bottom: 18px;
-  }
+  .beyond-wrap { padding: 30px 20px 64px; }
+  .beyond-nav { margin-bottom: 40px; }
+  #theme-toggle { top: auto; bottom: 18px; }
 }
