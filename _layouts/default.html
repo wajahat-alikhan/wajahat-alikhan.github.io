@@ -34,6 +34,10 @@
         {% if site.github.is_user_page %}
         <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
+
+        {% if page.url == "/" %}
+        <div class="aquarium"><pre id="aquarium" aria-hidden="true"></pre></div>
+        {% endif %}
       </header>
       <section>
 
@@ -46,5 +50,8 @@
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+    {% if page.url == "/" %}
+    <script src="{{ "/assets/js/aquarium.js" | relative_url }}"></script>
+    {% endif %}
   </body>
 </html>

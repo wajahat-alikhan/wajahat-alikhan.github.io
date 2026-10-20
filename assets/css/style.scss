@@ -203,3 +203,59 @@ section figcaption {
   font-style: italic;
   opacity: 0.7;
 }
+
+/* ---------- ASCII aquarium (homepage sidebar) ----------
+   assets/js/aquarium.js draws the fish as characters into the <pre>; no frame
+   around them, they just swim in the margin. */
+.aquarium {
+  margin: 26px 0 0;
+  overflow: hidden;
+  animation: aquarium-in 1.2s ease both;
+}
+
+.aquarium pre {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  color: #a2adb8;
+  font-size: 9px;
+  line-height: 1.1;
+  letter-spacing: 0;
+  white-space: pre;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+html.dark .aquarium pre {
+  color: #525f6d;
+}
+
+@keyframes aquarium-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* The sidebar is fixed on wide screens — on a short window the tank would run
+   into the footer, so it steps aside. */
+@media screen and (min-width: 961px) and (max-height: 700px) {
+  .aquarium { display: none; }
+}
+
+/* Between 720 and 960px the theme reserves 320px of header padding for the
+   nav; the tank reclaims it so it is not squeezed into a sliver. */
+@media screen and (max-width: 960px) {
+  .aquarium { margin-right: -300px; }
+}
+
+@media screen and (max-width: 720px) {
+  .aquarium { margin-right: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aquarium { animation: none; }
+}
