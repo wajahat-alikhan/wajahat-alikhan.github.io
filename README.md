@@ -13,7 +13,7 @@ My research interests include Multimodal Learning, Interpretability and Explaina
 
 I am a student member of Association for Computing Machinery (ACM) and a member of Pakistan Engineering Council (PEC).
 
-You can also reach out to me by email: wajahat@khu.ac.kr or wajahat@hoongketechnologies.com
+You can also reach out to me by email: "wajahat@khu.ac.kr"
 
 > The unexamined life is not worth living -- Socrates
 
